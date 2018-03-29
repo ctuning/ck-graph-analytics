@@ -1,0 +1,10 @@
+{
+  "data_uoa": "ck-cluster",
+  "data_uid": "68121412a8ff317c",
+  "data_alias": "ck-cluster",
+  "data_name": "ck-cluster",
+  "dict": {
+    "shared": "git",
+    "url": "https://github.com/dividiti/ck-cluster"
+  }
+}
