@@ -79,13 +79,13 @@ def setup(i):
        pi=os.path.dirname(p1)
 
        cus['path_lib']=pi+sdirs+'lib'
-       cus['path_include']=pi+sdirs+'include/cjson'
-
+#       cus['path_include']=pi+sdirs+'include/cjson'
+     
     ep=cus.get('env_prefix','')
     if ep!='':
        if pi!='':
           env[ep]=pi
-
+    cus['full_path_lib']=os.path.dirname(fp)
     ################################################################
     if win=='yes':
        if remote=='yes' or mingw=='yes': 
@@ -103,11 +103,7 @@ def setup(i):
     if r['return']>0: return r
     s += r['script']
     cus['static_lib']='libgraph_generator_mpi'+sext
-#FIX ME; It is just a work around. https://github.com/DaveGamble/cJSON/issues/178; 
-    cus['static_lib']=''+dext
-
-
-    env['CK_ENV_LIB_GRAPH_GENERATOR_INCLUDE_NAME']=cus.get('include_name','')
+#    env['CK_ENV_LIB_GRAPH_GENERATOR_PATH_LIB']=cus.get('full_path_lib')+cus['static_lib']
     env['CK_ENV_LIB_GRAPH_GENERATOR_STATIC_NAME']=cus.get('static_lib','')
-
+    
     return {'return':0, 'bat':s}

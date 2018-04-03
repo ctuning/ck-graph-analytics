@@ -14,9 +14,12 @@ make -f Makefile.AXBC.mpi clean
 echo $CK_ENV_LIB_MPI_INCLUDE
 make -f Makefile.AXBC.mpi MPI_INC_DIR=${CK_ENV_LIB_MPI_INCLUDE} CC=gcc
 if [ "${?}" != "0" ] ; then
-    echo "Error: installation of the dependencies failed!"
+    echo "Error: compilation failed!"
       exit 1
 fi
 make -f Makefile.AXBC.mpi install DEST_DIR="../../install/lib"
-env
+if [ "${?}" != "0" ] ; then
+    echo "Error: installation failed!"
+      exit 1
+fi
 return 0
