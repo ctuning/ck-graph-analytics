@@ -103,7 +103,7 @@ def setup(i):
     if r['return']>0: return r
     s += r['script']
     cus['static_lib']='libgraph_generator_mpi'+sext
-#    env['CK_ENV_LIB_GRAPH_GENERATOR_PATH_LIB']=cus.get('full_path_lib')+cus['static_lib']
+    env['CK_ENV_LIB_GRAPH_GENERATOR_PATH_LIB']=cus.get('full_path_lib')+'/'+cus['static_lib']
     env['CK_ENV_LIB_GRAPH_GENERATOR_STATIC_NAME']=cus.get('static_lib','')
     
     return {'return':0, 'bat':s}
