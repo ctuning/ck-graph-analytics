@@ -35,7 +35,7 @@ cd ${INSTALL_DIR}/src/src
            GRAPH_GEN_LIB=$CK_ENV_LIB_GRAPH_GENERATOR_LIB \
            MPI_HOME=${CK_ENV_LIB_MPI} \
            CUDA_HOME=${CUDA_HOME} \
-           CUB_INCLUDE= ${CK_ENV_LIB_CUB_INCLUDE} \
+           CUB_INCLUDE=${CK_ENV_LIB_CUB_INCLUDE} \
            CUDA_ARCH=${CUDA_ARC} 
 
 
