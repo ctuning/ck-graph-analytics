@@ -12,7 +12,7 @@
       "PACKAGE_PATCH": "NO", 
       "PACKAGE_SKIP_CLEAN_INSTALL": "YES", 
       "PACKAGE_SKIP_CLEAN_OBJ": "NO",
-      "PACKAGE_SKIP_CLEAN_SRC_DIR": "NO", 
+      "PACKAGE_SKIP_CLEAN_SRC_DIR": "YES", 
       "PACKAGE_SKIP_LINUX_MAKE": "YES",
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_SUB_DIR1": "install", 
@@ -49,6 +49,12 @@
       "name": "Nvidia CUDA", 
       "sort": 0, 
       "tags": "compiler,cuda,lang-c-cuda"
+    },
+    "cub": {
+      "local": "yes", 
+      "name": "Nvidia CUB", 
+      "sort": 0, 
+      "tags": "lib,cub,cuda"
     }
   }, 
   "end_full_path": {
