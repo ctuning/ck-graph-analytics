@@ -32,18 +32,6 @@
       "name": "Approximating BC", 
       "sort": 10, 
       "tags": "lib,abc,bc,approximation"
-    }, 
-    "graph-dataset-snap": {
-      "local": "yes", 
-      "name": "TensorFlow-Python model and weights", 
-      "sort": 40, 
-      "tags": "tensorflow-model,weights,python"
-    }, 
-    "python": {
-      "local": "yes", 
-      "name": "Python", 
-      "sort": 10, 
-      "tags": "compiler,python"
     }
   }, 
   "run_vars": {
@@ -52,6 +40,6 @@
     "CK_MPI_PROCESS": 1
   }, 
   "tags": [
-    "tensorflow-classification"
+    "graph"
   ]
 }
