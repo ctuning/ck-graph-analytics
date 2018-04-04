@@ -1,0 +1,57 @@
+{
+  "backup_data_uid": "cf69864428993f52", 
+  "data_name": "axbc-demo", 
+  "no_compile": "yes", 
+  "no_target_file": "yes", 
+  "print_files_after_run": [
+    "stderr.log", 
+    "stdout.log"
+  ], 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_via_ck": "yes", 
+        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_AXBC_BIN>>$ -S $<<CK_RMAT_SCALE>>$  -E $<<CK_RMAT_EF>>$ -p 1x1", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "stderr.log", 
+        "run_output_files": [
+          "stdout.log", 
+          "stderr.log", 
+          "tmp-ck-timer.json"
+        ]
+      }
+    }
+  }, 
+  "run_deps": {
+    "lib-axbc": {
+      "local": "yes", 
+      "name": "Approximating BC", 
+      "sort": 10, 
+      "tags": "lib,abc,bc,approximation"
+    }, 
+    "graph-dataset-snap": {
+      "local": "yes", 
+      "name": "TensorFlow-Python model and weights", 
+      "sort": 40, 
+      "tags": "tensorflow-model,weights,python"
+    }, 
+    "python": {
+      "local": "yes", 
+      "name": "Python", 
+      "sort": 10, 
+      "tags": "compiler,python"
+    }
+  }, 
+  "run_vars": {
+    "CK_RMAT_SCALE": 10, 
+    "CK_RMAT_EF": 4, 
+    "CK_MPI_PROCESS": 1
+  }, 
+  "tags": [
+    "tensorflow-classification"
+  ]
+}
