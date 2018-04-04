@@ -23,7 +23,6 @@ if [ "${CK_HAS_OPENMP}" = "0"  ]; then
   CK_OPENMP=""
 fi
 
-echo ${INSTALL_DIR}
 DEST_DIR=${INSTALL_DIR}/install/bin/
 
 if [ ! -d ${DEST_DIR} ] ; then

@@ -53,8 +53,8 @@
     "cub": {
       "local": "yes", 
       "name": "Nvidia CUB", 
-      "sort": 0, 
-      "tags": "lib,cub,cuda"
+      "sort": 2, 
+      "tags": "lib,cub"
     }
   }, 
   "end_full_path": {
