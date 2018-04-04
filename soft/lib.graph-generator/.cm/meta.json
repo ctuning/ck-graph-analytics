@@ -2,10 +2,11 @@
   "customize": {
     "env_prefix": "CK_ENV_LIB_GRAPH_GENERATOR"
   }, 
-  "soft_name": "Graph generator library", 
+  "soft_name": "R-MAT Graph Generator library", 
   "tags": [
     "lib", 
     "graph500",
-    "rmat-generator"
+    "rmat-generator",
+    "rmat"
   ]
 }
