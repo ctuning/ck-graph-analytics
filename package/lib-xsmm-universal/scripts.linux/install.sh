@@ -15,6 +15,8 @@ mkdir -p $PREFIX
 #generator requires different instructions
 #make CC=gcc PREFIX=${PREFIX}
 make generator CC=${CK_CC}
+#fixme GET STATIC OPTION via CK ENV
+make CC=${CK_CC} PREFIX=${PREFIX} STATIC=0 install
 if [ "${?}" != "0" ] ; then
     echo "Error: compilation failed!"
       exit 1
