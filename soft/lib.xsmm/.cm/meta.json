@@ -21,6 +21,7 @@
   "soft_name": "Intal XSMM library", 
   "tags": [
     "lib", 
-    "netcdf"
+    "intel",
+    "xsmm"
   ]
 }
