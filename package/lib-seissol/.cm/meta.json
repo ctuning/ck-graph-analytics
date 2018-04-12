@@ -10,7 +10,7 @@
       "PACKAGE_CONFIGURE_FLAGS_LINUX": "", 
       "PACKAGE_GIT": "YES", 
       "PACKAGE_GIT_CHECKOUT": "master", 
-      "PACKAGE_PATCH": "NO", 
+      "PACKAGE_PATCH": "YES", 
       "PACKAGE_GIT_CLONE_FLAGS": "--recursive",
       "PACKAGE_SKIP_CLEAN_INSTALL": "NO", 
       "PACKAGE_SKIP_CLEAN_OBJ": "YES", 

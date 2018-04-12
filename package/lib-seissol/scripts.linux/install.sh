@@ -18,11 +18,10 @@ if [ "${CK_CC}" == "icc" ] ; then
    COMPILER_TYPE="intel"
 fi
 
-
 #FIX ME USE CK VARIABLES
 # i.e.,  arch: .  Valid values are: ['snoarch', 'dnoarch', 'swsm', 'dwsm', 'ssnb', 'dsnb', 'sknc', 'dknc', 'shsw', 'dhsw', 'sknl', 'dknl'
-echo $CK_ENV_LIB_HDF5
-scons -j 4  \
+
+scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
        order=6 compileMode=release \
        arch=dhsw \
        parallelization=hybrid commThread=yes \
