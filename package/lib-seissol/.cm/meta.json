@@ -31,17 +31,17 @@
       "sort": 1, 
       "tags": "compiler,lang-cpp"
     },
-    "openmpi": {
+    "mpi": {
       "local": "yes", 
-      "name": "OpenMPI lib", 
+      "name": "MPI library", 
       "sort": 2, 
       "tags": "lib,mpi"
     },
     "hdf5": {
       "local": "yes", 
-      "name": "HDF5 lib", 
+      "name": "Parallel HDF5 lib (static)", 
       "sort": 4, 
-      "tags": "lib,hdf5,v1.10"
+      "tags": "lib,hdf5,vstatic,vparallel,vmpi"
     },
     "netcdf": {
       "local": "yes", 

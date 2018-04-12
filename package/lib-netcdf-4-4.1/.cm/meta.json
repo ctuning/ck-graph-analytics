@@ -48,9 +48,9 @@
     },
     "lib-hdf5": {
       "local": "yes", 
-      "name": "HDF5 library ", 
+      "name": "HDF5 parallel library", 
       "sort": 12, 
-      "tags": "lib,hdf5"
+      "tags": "lib,hdf5,vparallel"
     }
   }, 
   "end_full_path": {
