@@ -17,10 +17,10 @@ echo "Post install script"
 #DEST_SRC=`ck find program:demo-projectq`
 #echo ${INSTALL_DIR}
 #cp ${INSTALL_DIR}/src/examples/*.py ${DEST_SRC}
-DEST_SRC=${INSTALL_DIR}/install/launch_SeisSol
+DEST_SRC=${INSTALL_DIR}/install/bin
 mkdir -p ${DEST_SRC}
 
-cp ${INSTALL_DIR}/build/SeisSol* launch_SeisSol/
+cp ${INSTALL_DIR}/src/build/SeisSol* ${DEST_SRC}/
 
 
 

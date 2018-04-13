@@ -33,3 +33,8 @@ if [ "${?}" != "0" ] ; then
     echo "Error: compilation failed!"
       exit 1
 fi
+cp ${INSTALL_DIR}/src/src/version.h ${PREFIX}
+if [ "${?}" != "0" ] ; then
+    echo "Error: copy version.h failed!"
+      exit 1
+fi

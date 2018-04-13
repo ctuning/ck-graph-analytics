@@ -10,7 +10,7 @@
       "win": 3
     }, 
     "soft_file": {
-      "linux": ""
+      "linux": "install/"
     }, 
     "soft_path_example": {
       "linux": "", 

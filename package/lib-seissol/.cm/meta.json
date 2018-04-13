@@ -63,7 +63,7 @@
     }
   }, 
   "end_full_path": {
-    "linux": "install/bin/fixme"
+    "linux": "install/version.h"
   }, 
   "need_cpu_info": "yes", 
   "only_for_host_os_tags": [

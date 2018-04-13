@@ -22,6 +22,7 @@ def version_cmd(i):
 
     p0=os.path.basename(fp)
     p1=os.path.dirname(fp)
+    print(p0,p1)
 
     lst=os.listdir(p1)
     for fn in lst:
@@ -105,7 +106,7 @@ def setup(i):
     env=i['env']
 
     ep=cus['env_prefix']
-
+    p2 = p2 + '/install/'
     pi=os.path.join(p2,'include')
     pl=os.path.join(p2,'lib')
     pb=os.path.join(p2,'bin')
