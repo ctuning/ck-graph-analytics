@@ -72,6 +72,7 @@
   "only_for_target_os_tags": [
     "linux"
   ], 
+  "soft_uoa": "b29000ec3c6f16b6",
   "process_script": "install", 
   "suggested_path": "lib-seissol", 
   "tags": [

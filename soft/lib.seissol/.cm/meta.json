@@ -4,13 +4,13 @@
     "add_to_path": "yes", 
     "check_that_exists": "yes", 
     "ck_version": 10, 
-    "env_prefix": "CK_ENV_LIB_XSMM", 
+    "env_prefix": "CK_ENV_LIB_SEISSOL", 
     "limit_recursion_dir_search": {
       "linux": 3, 
       "win": 3
     }, 
     "soft_file": {
-      "linux": "libxsmm_gemm_generator"
+      "linux": ""
     }, 
     "soft_path_example": {
       "linux": "", 
@@ -18,10 +18,9 @@
     }
   }, 
   "deps": {}, 
-  "soft_name": "Intel XSMM library", 
+  "soft_name": "Seissol", 
   "tags": [
     "lib", 
-    "intel",
-    "xsmm"
+    "seissol"
   ]
 }
