@@ -110,10 +110,17 @@ def setup(i):
     pi=os.path.join(p2,'include')
     pl=os.path.join(p2,'lib')
     pb=os.path.join(p2,'bin')
-
+    # we do not know the exact file name... 
+    binaries=os.listdir(pb)
+    num_of_bins = len(binaries)
     cus['path_include']=pi
     cus['path_lib']=pl
     cus['path_bin']=pb
+    i = 0
+    for f in binaries:        
+        i += 1
+        env['CK_ENV_LIB_SEISSOL_BIN_'+str(1)]=pb+'/'+f
+
 
     r = ck.access({'action': 'lib_path_export_script', 
                    'module_uoa': 'os', 
