@@ -119,7 +119,10 @@ def setup(i):
     i = 0
     for f in binaries:        
         i += 1
-        env['CK_ENV_LIB_SEISSOL_BIN_'+str(1)]=pb+'/'+f
+        env_name = 'CK_ENV_LIB_SEISSOL_BIN_'+str(i)
+        bin_name = pb+'/'+f
+        env[env_name]= bin_name
+        s += '\n export '+env_name+'='+bin_name+'\n'
 
 
     r = ck.access({'action': 'lib_path_export_script', 
