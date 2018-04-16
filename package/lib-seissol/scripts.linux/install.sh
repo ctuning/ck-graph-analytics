@@ -23,7 +23,7 @@ fi
 
 scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
        order=6 compileMode=release \
-       arch=dhsw \
+       arch=${CK_SEISSOL_TARGET_ARCH} \
        parallelization=hybrid commThread=yes \
        netcdf=yes netcdfDir=${CK_ENV_LIB_NETCDF} \
        compiler=${COMPILER_TYPE} \
