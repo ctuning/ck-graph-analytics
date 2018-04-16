@@ -11,11 +11,16 @@
   "program": "yes", 
   "run_cmds": {
     "default": {
+      "dataset_tags": [
+        "sissol", 
+        "parameters", 
+        "dataset"
+      ],
       "ignore_return_code": "no", 
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_via_ck": "yes", 
-        "run_cmd_main": "$<<CK_ENV_LIB_MPI_BIN>>$/mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_LIB_SEISSOL_BIN_1>>$ ../parameters.par", 
+        "run_cmd_main": "$<<CK_ENV_LIB_MPI_BIN>>$/mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_LIB_SEISSOL_BIN_1>>$ $#dataset_path#$ parameters_tpv13_easi.par", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
