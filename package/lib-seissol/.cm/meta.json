@@ -19,7 +19,7 @@
       "PACKAGE_SKIP_LINUX_MAKE": "YES", 
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_URL": "https://github.com/SeisSol/SeisSol.git",
-      "CK_SEISSOL_TARGET_ARCH": "snoarch"
+      "CK_SEISSOL_TARGET_ARCH": "dsnb"
     }, 
     "sort": 100, 
     "use_git_revision": "yes", 

@@ -20,6 +20,7 @@ fi
 
 #FIX ME USE CK VARIABLES
 # i.e.,  arch: .  Valid values are: ['snoarch', 'dnoarch', 'swsm', 'dwsm', 'ssnb', 'dsnb', 'sknc', 'dknc', 'shsw', 'dhsw', 'sknl', 'dknl'
+# dsnb = sandy bridge
 
 scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
        order=6 compileMode=release \
