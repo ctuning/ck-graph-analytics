@@ -29,6 +29,26 @@
           "tmp-ck-timer.json"
         ]
       }
+    },
+    "no-mpi": {
+      "dataset_tags": [
+        "seissol", 
+        "parameters", 
+        "dataset"
+      ],
+      "ignore_return_code": "no", 
+      "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json", 
+        "post_process_via_ck": "yes", 
+        "run_cmd_main": "$<<CK_ENV_LIB_SEISSOL_BIN_1>>$ $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "stderr.log", 
+        "run_output_files": [
+          "stdout.log", 
+          "stderr.log", 
+          "tmp-ck-timer.json"
+        ]
+      }
     }
   }, 
   "run_deps": {

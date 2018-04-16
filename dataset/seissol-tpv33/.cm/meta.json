@@ -20,14 +20,14 @@
     ]
   }, 
   "dataset_files": [
-    "parameters_tpv13.par",
-    "parameters_tpv13_easi.par"
+    "parameters_tpv33.par", 
+    "parameters_tpv33_easi.par" 
   ], 
   "tags": [
     "dataset", 
     "parameters", 
-    "tpv12_13",
+    "tpv12_33", 
     "example", 
-    "seissol" 
+    "seissol"
   ]
 }
