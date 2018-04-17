@@ -50,11 +50,11 @@
       "sort": 8, 
       "tags": "lib,netcdf"
     },
-    "lib-metis": {
+    "lib-parmetis": {
       "local": "yes", 
-      "name": "Metis lib", 
+      "name": "ParMetis lib", 
       "sort": 9, 
-      "tags": "lib,metis"
+      "tags": "lib,parmetis"
     },
     "lib-xsmm": {
       "local": "yes", 
