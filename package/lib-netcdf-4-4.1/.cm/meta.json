@@ -44,7 +44,7 @@
       "local": "yes", 
       "name": "MPI Library", 
       "sort": 11, 
-      "tags": "lib,mpi,openmpi"
+      "tags": "lib,mpi"
     },
     "lib-hdf5": {
       "local": "yes", 
