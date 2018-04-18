@@ -28,7 +28,7 @@ scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
        netcdf=yes netcdfDir=${CK_ENV_LIB_NETCDF} \
        compiler=${COMPILER_TYPE} \
        hdf5=yes hdf5Dir=${CK_ENV_LIB_HDF5} \
-       metis=yes metisDir=${CK_ENV_LIB_PARMETIS}
+       metis=yes metisDir=${CK_ENV_LIB_METIS}
 
 if [ "${?}" != "0" ] ; then
     echo "Error: compilation failed!"

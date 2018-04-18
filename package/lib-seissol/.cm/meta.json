@@ -56,6 +56,13 @@
       "sort": 9, 
       "tags": "lib,parmetis"
     },
+    "lib-metis": {
+      "local": "yes", 
+      "name": "Metis lib", 
+      "sort": 9, 
+      "tags": "lib,metis"
+    },
+
     "lib-xsmm": {
       "local": "yes", 
       "name": "Intel XSMM lib", 
