@@ -11,8 +11,14 @@ Collective Knowledge workflow for CLUSTER competition at SuperComputing'18
 # pip install ck
 $ ck pull repo --url=https://github.com/dividiti/ck-cluster
 ```
+## Intel MPI Library
+Install Intel MPI lib following the instruction (here)[https://software.seek.intel.com/performance-libraries]
 
+Detect Intel MPI Library
 
+```
+ck detect soft:lib.mpi --full_path=[your_path]/intel/compilers_and_libraries_2018/linux/mpi/bin64/mpivars.sh
+```
 
 # Questions and comments
 
