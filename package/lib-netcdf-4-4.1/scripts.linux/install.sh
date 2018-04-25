@@ -12,7 +12,7 @@
 
 cd ${INSTALL_DIR}/${PACKAGE_SUB_DIR}
 
-export CC=${CK_ENV_LIB_MPI_BIN}/mpicc 
+export CC=${CK_ENV_LIB_MPI_CC}
 export CPPFLAGS="-I${CK_ENV_LIB_HDF5_INCLUDE}"
 export LDFLAGS="-L${CK_ENV_LIB_HDF5_LIB}"
 PREFIX=${INSTALL_DIR}/install
