@@ -40,7 +40,7 @@
       "sort": 10, 
       "tags": "compiler,lang-cpp"
     },
-    "lib-openmpi": {
+    "lib-mpi": {
       "local": "yes", 
       "name": "MPI Library", 
       "sort": 11, 

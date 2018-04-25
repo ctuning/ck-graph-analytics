@@ -39,10 +39,10 @@
     }, 
     "lib-openmpi": {
       "local": "yes", 
-      "name": "Open MPI library", 
+      "name": "OpenMPI library", 
       "skip_default": "yes", 
       "sort": 30, 
-      "tags": "lib,mpi"
+      "tags": "lib,mpi,openmpi"
     }, 
     "cuda": {
       "local": "yes", 
