@@ -1,0 +1,15 @@
+diff --git a/SConstruct b/SConstruct
+index e503d67..2749eec 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -376,8 +376,8 @@ if env['scalasca'] == 'kernels_2.x':
+ #
+ 
+ # enforce restrictive C/C++-Code
+-env.Append(CFLAGS   = ['-Wall', '-Werror', '-ansi'],
+-           CXXFLAGS = ['-Wall', '-Werror', '-ansi'])
++env.Append(CFLAGS   = ['-Wall', '-Wno-error', '-ansi'],
++           CXXFLAGS = ['-Wall', '-Wno-error', '-ansi'])
+ if env['compiler'] == 'intel':
+     env.Append(CXXFLGAS = ['-wd13379'])
+ elif env['compiler'] == 'gcc':
