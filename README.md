@@ -13,11 +13,26 @@ $ ck pull repo --url=https://github.com/dividiti/ck-cluster
 ```
 ## Intel MPI Library
 Install Intel MPI lib following the instruction (here)[https://software.seek.intel.com/performance-libraries]
-
-Detect Intel MPI Library
+or via (**apt**)[https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo]
 
 ```
-ck detect soft:lib.mpi --full_path=[your_path]/intel/compilers_and_libraries_2018/linux/mpi/bin64/mpivars.sh
+1. wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+2. apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+3. sudo wget https://apt.repos.intel.com/setup/intelproducts.list -O /etc/apt/sources.list.d/intelproducts.list
+4. sudo sh -c 'echo deb https://apt.repos.intel.com/mpi all main > /etc/apt/sources.list.d/intel-mpi.list'
+5. sudo apt-get update
+6. sudo apt-get install intel-mpi
+```
+Detect Intel MPI Library i.e,
+
+```
+ck detect soft:lib.mpiicc --full_path=/opt/intel/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
+```
+
+## Install SeisSol
+
+```
+ck install package:lib-seissol
 ```
 
 # Questions and comments
