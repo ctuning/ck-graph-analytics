@@ -1,0 +1,13 @@
+diff --git a/Downward.h b/Downward.h
+index 591c95f..01d38db 100644
+--- a/Downward.h
++++ b/Downward.h
+@@ -76,7 +76,7 @@ public:
+ 	{
+ 		unsigned int lid[internal::Topology<Topo>::cellvertices()];
+ 		vertices(puml, cell, lid);
+-		internal::Utils::l2g<Topo, PUML<Topo>::vertex_t, internal::Topology<Topo>::cellvertices()>(puml, lid, gid);
++		internal::Utils::l2g<Topo, typename PUML<Topo>::vertex_t, internal::Topology<Topo>::cellvertices()>(puml, lid, gid);
+ 	}
+ 
+ 	/**
