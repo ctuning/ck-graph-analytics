@@ -36,7 +36,7 @@
       "local": "yes", 
       "name": "Parallel HDF5 lib (static)", 
       "sort": 4, 
-      "tags": "lib,hdf5,vstatic,vparallel,vmpi"
+      "tags": "lib,hdf5-static,vparallel,vmpi"
     }, 
     "lib-xsmm": {
       "local": "yes", 
