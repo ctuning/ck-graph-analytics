@@ -7,25 +7,24 @@
 # See CK COPYRIGHT.txt for copyright details.
 #
 # Developer(s):
-# - Grigori Fursin, grigori.fursin@cTuning.org, 2017
 #
 
-SOURCE_PATCH_PATH=`ck find package:lib-seissol`
-cp $SOURCE_PATCH_PATH/scripts.linux/patch4 ${INSTALL_DIR}/src/submodules/PUML/
-cd ${INSTALL_DIR}/src/submodules/PUML/
-git apply patch4
-
-if [ "${?}" != "0" ] ; then
-    echo "Error: PUML Patch failed!"
-      exit 1
-fi
+#SOURCE_PATCH_PATH=`ck find package:lib-seissol`
+#cp $SOURCE_PATCH_PATH/scripts.linux/patch4 ${INSTALL_DIR}/src/submodules/PUML/
+#cd ${INSTALL_DIR}/src/submodules/PUML/
+#git apply patch4
+#
+#if [ "${?}" != "0" ] ; then
+#    echo "Error: PUML Patch failed!"
+#      exit 1
+#fi
 
 cd ${INSTALL_DIR}/src/
+
+git submodule update
+
 PREFIX=${INSTALL_DIR}/install
 mkdir -p $PREFIX
-
-
-
 
 COMPILER_TYPE="gcc"
 if [ "${CK_CC}" == "icc" ] ; then
@@ -41,8 +40,8 @@ scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
        parallelization=hybrid commThread=yes \
        netcdf=yes netcdfDir=${CK_ENV_LIB_NETCDF} \
        compiler=${COMPILER_TYPE} \
-       hdf5=yes hdf5Dir=${CK_ENV_LIB_HDF5} \
-       metis=yes metisDir=${CK_ENV_LIB_METIS}
+       hdf5=yes hdf5Dir=${CK_ENV_LIB_HDF5} 
+#       metis=yes metisDir=${CK_ENV_LIB_METIS}
 
 if [ "${?}" != "0" ] ; then
     echo "Error: compilation failed!"
