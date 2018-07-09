@@ -21,7 +21,6 @@
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_URL": "https://github.com/SeisSol/Checkpoint-Bench"
     }, 
-    "sort": 100, 
     "use_git_revision": "yes", 
     "version": "master"
   }, 
@@ -75,6 +74,7 @@
   ], 
   "process_script": "install", 
   "suggested_path": "lib-seissol-checkpoint", 
+  "soft_uoa": "c5c40c604f9cb486", 
   "tags": [
     "lib", 
     "seissol-checkpoint", 

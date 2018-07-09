@@ -21,9 +21,8 @@
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_URL": "https://github.com/SeisSol/SeisSol.git"
     }, 
-    "sort": 100, 
     "use_git_revision": "yes", 
-    "version": "master"
+    "version": "201703"
   }, 
   "deps": {
     "compiler": {
@@ -79,7 +78,7 @@
   "tags": [
     "lib", 
     "seissol", 
-    "vmaster"
+    "v201703"
   ], 
   "use_scripts_from_another_entry": {
     "data_uoa": "cd9ccc74060b3d18", 

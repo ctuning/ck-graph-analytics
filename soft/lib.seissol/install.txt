@@ -1,2 +1,1 @@
-You can download and install latest (or required) package from
-* https://www.open-mpi.org
+Library from this paper: https://dl.acm.org/citation.cfm?id=3126948
