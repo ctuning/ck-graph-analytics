@@ -50,7 +50,7 @@
       "local": "yes", 
       "name": "HDF5 parallel library", 
       "sort": 12, 
-      "tags": "lib,hdf5,vparallel"
+      "tags": "lib,hdf5-static,vparallel,vmpi"
     }
   }, 
   "end_full_path": {

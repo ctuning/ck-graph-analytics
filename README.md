@@ -43,13 +43,11 @@ or via (**apt**)[https://software.intel.com/en-us/articles/installing-intel-free
 4. sudo sh -c 'echo deb https://apt.repos.intel.com/mpi all main > /etc/apt/sources.list.d/intel-mpi.list'
 5. sudo apt-get update
 6. sudo apt-get install intel-mpi
-```
-Detect Intel MPI Library i.e,
+7. ck detect soft --tags=lib,mpi,intel
 
+Note that if this library is installed in an unusual path, you can help CK detect it as follows:
+7. ck detect soft --tags=lib,mpi,intel --search_dirs=<<INSTALLATION_PATH>>
 ```
-ck detect soft:lib.mpiicc --full_path=/opt/intel/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
-```
-
 ## Install SeisSol
 
 ```
