@@ -21,7 +21,6 @@
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_URL": "https://github.com/SeisSol/SeisSol.git"
     }, 
-    "use_git_revision": "yes", 
     "version": "201703"
   }, 
   "deps": {
