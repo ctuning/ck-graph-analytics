@@ -54,7 +54,6 @@ Note that if this library is installed in an unusual path, you can help CK detec
 ck install package:lib-seissol
 ```
 
-# Questions and comments
+# Feedback
 
-Feel free to send your questions and comments to the [CK mailing list](http://groups.google.com/group/collective-knowledge)
-or join our [LinkedIn group on reproducible R&D](https://www.linkedin.com/groups?home=&gid=7433414&trk=my_groups-tile-grp).
+Get in touch with the CK community about this workflow and CK components [here](https://github.com/ctuning/ck/wiki/Contacts). 
