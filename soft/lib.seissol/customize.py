@@ -85,6 +85,7 @@ def setup(i):
 
     p1=os.path.dirname(fp)
     p2=os.path.dirname(p1)
+    p3=os.path.dirname(p2)
 
     hosd=i['host_os_dict']
     tosd=i['target_os_dict']
@@ -106,32 +107,53 @@ def setup(i):
     env=i['env']
 
     ep=cus['env_prefix']
-    p2 = p2 + '/install/'
-    pi=os.path.join(p2,'include')
-    pl=os.path.join(p2,'lib')
-    pb=os.path.join(p2,'bin')
-    # we do not know the exact file name... 
-    binaries=os.listdir(pb)
-    num_of_bins = len(binaries)
-    cus['path_include']=pi
-    cus['path_lib']=pl
-    cus['path_bin']=pb
-    i = 0
-    for f in binaries:        
-        i += 1
-        env_name = 'CK_ENV_LIB_SEISSOL_BIN_'+str(i)
-        bin_name = pb+'/'+f
-        env[env_name]= bin_name
-        s += '\n export '+env_name+'='+bin_name+'\n'
 
-
-    r = ck.access({'action': 'lib_path_export_script', 
-                   'module_uoa': 'os', 
-                   'host_os_dict': hosd, 
-                   'lib_path': cus.get('path_lib','')})
-    if r['return']>0: return r
-    s += r['script']
+    # Processing directories
+    p1=os.path.dirname(fp) # installation directory
+    p2=os.path.dirname(p1) # top dir with src
 
     env[ep]=p2
+
+    px=os.path.join(p1,'include')
+    if os.path.isdir(px):
+       cus['path_include']=px
+
+    pl=os.path.join(p1,'lib')
+    if os.path.isdir(pl):
+       cus['path_lib']=pl
+
+       r = ck.access({'action': 'lib_path_export_script', 
+                      'module_uoa': 'os', 
+                      'host_os_dict': hosd, 
+                      'lib_path': cus.get('path_lib','')})
+       if r['return']>0: return r
+       s += r['script']
+
+    pb=os.path.join(p1,'bin')
+    if os.path.isdir(pb):
+       cus['path_bin']=pb
+
+    # Check Maple path
+    ps=os.path.join(p2, 'src')
+    if os.path.isdir(ps):
+       env[ep+'_SRC']=ps
+
+       maple_path=os.path.join(ps, 'Maple')
+       if os.path.isdir(maple_path):
+          env[ep+'_MAPLE']=maple_path
+
+    # Check binary
+    fbin=''
+    for f in os.listdir(pb):
+        f1=os.path.join(pb,f)
+        if os.path.isfile(f1) and f.startswith('SeisSol_'):
+           fbin=f
+           break
+
+    if fbin=='':
+       return {'return':1, 'error':'SeisSol binaries were not found'}
+
+    env[ep+'_BINARY']=fbin
+    env[ep+'_BINARY_FULL']=os.path.join(pb,fbin)
 
     return {'return':0, 'bat':s}

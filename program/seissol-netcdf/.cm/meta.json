@@ -1,6 +1,6 @@
 {
   "backup_data_uid": "c374d10bbfd53379", 
-  "data_name": "seissol", 
+  "data_name": "seissol-netcdf", 
   "no_compile": "yes", 
   "no_target_file": "yes", 
   "print_files_after_run": [
@@ -11,45 +11,32 @@
   "program": "yes", 
   "run_cmds": {
     "default": {
-      "dataset_tags": [
-        "seissol", 
-        "parameters", 
-        "dataset"
-      ], 
       "ignore_return_code": "no", 
       "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_via_ck": "yes", 
-        "run_cmd_main": "$<<CK_ENV_LIB_MPI_BIN>>$/mpirun -np $<<CK_MPI_PROCESS>>$ ./SeisSol $#dataset_path#$$#dataset_filename#$", 
+        "pre_process_via_ck": {
+          "script_name": "ck_preprocess"
+        }, 
+        "run_cmd_main": "$<<CK_ENV_LIB_MPI_RUN_FULL>>$ -np $<<MPI_NUM_PROCESSES>>$ $<<CK_ENV_LIB_SEISSOL_BINARY_FULL>>$ $<<CK_ENV_DATASET_SEISSOL_NAME>>$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
           "stdout.log", 
-          "stderr.log", 
-          "tmp-ck-timer.json"
+          "stderr.log" 
         ]
       }
     }, 
     "no-mpi": {
-      "dataset_tags": [
-        "seissol", 
-        "parameters", 
-        "dataset"
-      ], 
       "ignore_return_code": "no", 
       "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_via_ck": "yes", 
         "pre_process_via_ck": {
           "script_name": "ck_preprocess"
         }, 
-        "run_cmd_main": "./SeisSol $#dataset_path#$$#dataset_filename#$", 
+        "run_cmd_main": "$<<CK_ENV_LIB_SEISSOL_BINARY_FULL>>$ $<<CK_ENV_DATASET_SEISSOL_NAME>>$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
           "stdout.log", 
-          "stderr.log", 
-          "tmp-ck-timer.json"
+          "stderr.log" 
         ]
       }
     }
@@ -57,18 +44,27 @@
   "run_deps": {
     "lib-seissol": {
       "local": "yes", 
-      "name": "SeisSol Library", 
+      "name": "SeisSol Library (netcdf)", 
       "sort": 10, 
-      "tags": "lib,seissol"
+      "tags": "lib,seissol,vnetcdf"
+    },
+    "dataset-seissol": {
+      "local": "yes", 
+      "name": "SeisSol dataset (netcdf)", 
+      "sort": 20, 
+      "tags": "dataset,seissol,vnetcdf"
     }
   }, 
   "run_vars": {
-    "CK_MPI_PROCESS": 1, 
+    "MPI_NUM_PROCESSES": 1, 
     "OMP_NUM_THREADS": 1
   }, 
   "tags": [
     "scientific", 
+    "seissol",
+    "supercomputing",
     "cluster", 
-    "cluster-competition"
+    "cluster-competition",
+    "2018"
   ]
 }

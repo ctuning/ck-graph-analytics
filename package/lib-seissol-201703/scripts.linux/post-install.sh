@@ -25,6 +25,7 @@ MAPLE_DIR=${INSTALL_DIR}/src/Maple
 echo ${MAPLE_DIR}
 
 echo ${MAPLE_DIR} > ${DEST_SRC}/DGPATH
+
 cp ${INSTALL_DIR}/src/build/SeisSol* ${DEST_SRC}/
 
 return 0

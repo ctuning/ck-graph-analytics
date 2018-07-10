@@ -76,7 +76,8 @@
   "suggested_path": "lib-seissol", 
   "tags": [
     "lib", 
-    "seissol", 
+    "seissol",
+    "vnetcdf",
     "v201703"
   ], 
   "use_scripts_from_another_entry": {

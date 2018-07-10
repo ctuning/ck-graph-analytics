@@ -18,7 +18,7 @@
     "dataset", 
     "seissol", 
     "tpv33", 
-    "netcdf",
+    "vnetcdf",
     "v201703"
   ]
 }
