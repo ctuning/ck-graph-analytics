@@ -9,9 +9,7 @@
       "linux": 3, 
       "win": 3
     }, 
-    "soft_file": {
-      "linux": "install/"
-    }, 
+    "soft_file_universal": "install$#sep#$version.h",
     "soft_path_example": {
       "linux": "", 
       "win": ""

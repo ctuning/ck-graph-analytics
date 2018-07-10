@@ -24,6 +24,6 @@
       "1"
     ]
   }, 
-  "data_name": "seisol-tpv13", 
+  "data_name": "seissol-tpv13", 
   "description": "cDatasets/MiDataSets for cBench, see http://cTuning.org"
 }

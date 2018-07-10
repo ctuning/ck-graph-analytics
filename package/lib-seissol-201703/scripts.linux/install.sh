@@ -35,11 +35,11 @@ scons -j ${CK_HOST_CPU_NUMBER_OF_PROCESSORS}  \
 
 if [ "${?}" != "0" ] ; then
     echo "Error: compilation failed!"
-      exit 1
+    exit 1
 fi
 
 cp ${INSTALL_DIR}/src/src/version.h ${PREFIX}
 if [ "${?}" != "0" ] ; then
     echo "Error: copy version.h failed!"
-      exit 1
+    exit 1
 fi
