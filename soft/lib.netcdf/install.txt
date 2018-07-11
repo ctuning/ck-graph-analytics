@@ -1,2 +1,0 @@
-You can download and install latest (or required) package from
-* https://www.open-mpi.org

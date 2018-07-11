@@ -82,7 +82,7 @@ def setup(i):
 
     env[ep]=pi
     env[ep+'_FULL_NAME']=fp
-    env[ep+'NAME']=pn
+    env[ep+'_NAME']=pn
 
     return {'return':0, 'bat':s}
 
