@@ -1,6 +1,5 @@
-# ck-cluster18
-Collective Knowledge workflow for the 
-[CLUSTER competition at SuperComputing'18](https://sc18.supercomputing.org/sc18-announces-selected-paper-for-next-student-cluster-competition-reproducibility-challenge)
+Collective Knowledge workflow for the graph applications such as SeisSol:
+* https://sc18.supercomputing.org/sc18-announces-selected-paper-for-next-student-cluster-competition-reproducibility-challenge
 
 [![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-powered-by-ck.png)](https://github.com/ctuning/ck)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)

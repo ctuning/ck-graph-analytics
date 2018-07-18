@@ -1,12 +1,12 @@
 {
   "data_uoa": "ck-cluster",
   "data_uid": "68121412a8ff317c",
-  "data_alias": "ck-cluster",
-  "data_name": "ck-cluster",
+  "data_alias": "ck-graph-analytics",
+  "data_name": "ck-graph-analytics",
   "dict": {
     "private":"yes",
     "shared": "git",
-    "url": "https://github.com/dividiti/ck-cluster",
+    "url": "https://github.com/ctuning/ck-graph-analytics",
     "repo_deps": [
       {
         "repo_uoa": "ck-autotuning"
