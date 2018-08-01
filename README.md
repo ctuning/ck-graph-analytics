@@ -1,5 +1,4 @@
-Collective Knowledge workflow for the graph applications such as SeisSol:
-* https://sc18.supercomputing.org/sc18-announces-selected-paper-for-next-student-cluster-competition-reproducibility-challenge
+Collective Knowledge workflow for the graph applications such as AxBC:
 
 [![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-powered-by-ck.png)](https://github.com/ctuning/ck)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
@@ -47,10 +46,10 @@ or via (**apt**)[https://software.intel.com/en-us/articles/installing-intel-free
 Note that if this library is installed in an unusual path, you can help CK detect it as follows:
 7. ck detect soft --tags=lib,mpi,intel --search_dirs=<<INSTALLATION_PATH>>
 ```
-## Install SeisSol
+## Install AxBC
 
 ```
-ck install package:lib-seissol
+ck install package:lib-axbc
 ```
 
 # Feedback
