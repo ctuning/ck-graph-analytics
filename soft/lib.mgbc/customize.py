@@ -101,5 +101,5 @@ def setup(i):
       'lib_path': cus.get('path_lib','')})
     if r['return']>0: return r
     s += r['script']
-    env['CK_ENV_AXBC_BIN']=fp
+    env['CK_ENV_BC_BIN']=fp
     return {'return':0, 'bat':s}
