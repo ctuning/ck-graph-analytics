@@ -1,41 +1,53 @@
 {
   "check_exit_status": "yes", 
-  "comment": "build Approximating BC", 
+  "comment": "build Multi-GPU BC", 
   "customize": {
     "extra_dir": "", 
     "git_src_dir": "src", 
     "install_env": {
+      "CUDA_ARC": "-arch=sm_70", 
       "PACKAGE_BUILD_TYPE": "make", 
       "PACKAGE_CONFIGURE_FLAGS": "", 
       "PACKAGE_COPY": "NO", 
       "PACKAGE_GIT": "YES", 
+      "PACKAGE_GIT_CHECKOUT": "master", 
       "PACKAGE_PATCH": "NO", 
       "PACKAGE_SKIP_CLEAN_INSTALL": "YES", 
-      "PACKAGE_SKIP_CLEAN_OBJ": "NO",
+      "PACKAGE_SKIP_CLEAN_OBJ": "NO", 
       "PACKAGE_SKIP_CLEAN_SRC_DIR": "YES", 
-      "PACKAGE_SKIP_LINUX_MAKE": "YES",
+      "PACKAGE_SKIP_LINUX_MAKE": "YES", 
       "PACKAGE_SUB_DIR": "src", 
       "PACKAGE_SUB_DIR1": "install", 
-      "PACKAGE_GIT_CHECKOUT": "master",
-      "PACKAGE_URL": "https://github.com/fvella/axbc.git", 
-      "CUDA_ARC": "-arch=sm_70" 
+      "PACKAGE_URL": "https://github.com/fvella/mgbc.git"
     }, 
     "no_ver_in_suggested_path": "yes", 
     "use_git_revision": "yes", 
     "version": "master"
   }, 
   "deps": {
+    "compiler": {
+      "local": "yes", 
+      "name": "C++ compiler", 
+      "sort": 10, 
+      "tags": "compiler,lang-cpp"
+    }, 
+    "cub": {
+      "local": "yes", 
+      "name": "Nvidia CUB", 
+      "sort": 2, 
+      "tags": "lib,cub"
+    }, 
+    "cuda": {
+      "local": "yes", 
+      "name": "Nvidia CUDA", 
+      "sort": 0, 
+      "tags": "compiler,cuda,lang-c-cuda"
+    }, 
     "lib-graph-generator": {
       "local": "yes", 
       "name": "Graph Generator", 
       "sort": 5, 
       "tags": "lib,rmat-generator,vcnr"
-    }, 
-    "compiler": {
-      "local": "yes", 
-      "name": "C++ compiler", 
-      "sort": 10, 
-      "tags": "compiler,lang-cpp" 
     }, 
     "lib-openmpi": {
       "local": "yes", 
@@ -43,42 +55,30 @@
       "skip_default": "yes", 
       "sort": 30, 
       "tags": "lib,mpi,openmpi"
-    }, 
-    "cuda": {
-      "local": "yes", 
-      "name": "Nvidia CUDA", 
-      "sort": 0, 
-      "tags": "compiler,cuda,lang-c-cuda"
-    },
-    "cub": {
-      "local": "yes", 
-      "name": "Nvidia CUB", 
-      "sort": 2, 
-      "tags": "lib,cub"
     }
   }, 
   "end_full_path": {
-    "linux": "install/bin/axbc2d" 
+    "linux": "install/bin/mgbc"
   }, 
   "need_cpu_info": "yes", 
   "only_for_host_os_tags": [
-    "linux" 
+    "linux"
   ], 
   "only_for_target_os_tags": [
-    "linux" 
+    "linux"
   ], 
   "process_script": "install", 
-  "suggested_path": "lib-axbc", 
-  "soft_uoa": "d85b4ece3e9408d5",
+  "soft_uoa": "5c982d4b48a9fb55", 
+  "suggested_path": "lib-mgbc", 
   "tags": [
     "lib", 
     "bc", 
+    "exact",
     "betwenness", 
     "graph", 
-    "approximation", 
-    "approx",
-    "vabc",
-    "vaxbc"
+    "multigpu", 
+    "gpu", 
+    "vbc"
   ], 
   "use_scripts_from_another_entry": {
     "data_uoa": "cd9ccc74060b3d18", 
