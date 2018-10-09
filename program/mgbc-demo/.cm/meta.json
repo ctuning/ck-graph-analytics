@@ -15,7 +15,7 @@
       "run_time": {
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_via_ck": "yes", 
-        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_BC_BIN>>$ -S $<<CK_RMAT_SCALE>>$  -E $<<CK_RMAT_EF>>$ -p 1x1 -N 1024 -H 0", 
+        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_BC_BIN>>$ -S $<<CK_RMAT_SCALE>>$  -E $<<CK_RMAT_EF>>$ -p 1x1 -N 1024 -H 0 -o $<<CK_GRAPH_NAME>>$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
@@ -37,7 +37,8 @@
   "run_vars": {
     "CK_MPI_PROCESS": 1, 
     "CK_RMAT_EF": 4, 
-    "CK_RMAT_SCALE": 10
+    "CK_RMAT_SCALE": 10,
+    "CK_GRAPH_NAME": "RMAT-10-4"
   }, 
   "tags": [
     "graph"
