@@ -83,9 +83,9 @@ def setup(i):
     env[ep]=pi
     env[ep+'_FULL_NAME']=fp
     env[ep+'_NAME']=pn
-    env[ep+'GRAPH_NAME']=ienv['GRAPH_NAME']
-    env[ep+'NUM_OF_VERTICES']=ienv['NUM_OF_VERTICES']
-    env[ep+'MAX_VERTEX_ID']=ienv['MAX_VERTEX_ID']
+    env[ep+'_GRAPH_NAME']=ienv['GRAPH_NAME']
+    env[ep+'_NUM_OF_VERTICES']=ienv['NUM_OF_VERTICES']
+    env[ep+'_MAX_VERTEX_ID']=ienv['MAX_VERTEX_ID']
 
     print(env)
     return {'return':0, 'bat':s}
