@@ -79,10 +79,14 @@ def setup(i):
     pi=os.path.dirname(fp)
 
     ep=cus['env_prefix']
-
+    ienv=cus['install_env']
     env[ep]=pi
     env[ep+'_FULL_NAME']=fp
     env[ep+'_NAME']=pn
+    env[ep+'GRAPH_NAME']=ienv['GRAPH_NAME']
+    env[ep+'NUM_OF_VERTICES']=ienv['NUM_OF_VERTICES']
+    env[ep+'MAX_VERTEX_ID']=ienv['MAX_VERTEX_ID']
 
+    print(env)
     return {'return':0, 'bat':s}
 
