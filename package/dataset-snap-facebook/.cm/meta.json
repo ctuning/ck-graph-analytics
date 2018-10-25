@@ -6,8 +6,8 @@
     "force_ask_path": "yes", 
     "install_env": {
       "GRAPH_NAME": "facebook",
-      "NUM_OF_VERTICES": 1, 
-      "MAX_VERTEX_ID": 1
+      "NUM_OF_VERTICES": 4039, 
+      "MAX_VERTEX_ID": 4038
     }, 
     "no_os_in_suggested_path": "yes", 
     "no_ver_in_suggested_path": "yes", 
