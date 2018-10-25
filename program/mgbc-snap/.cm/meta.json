@@ -1,6 +1,6 @@
 {
-  "backup_data_uid": "6a26422187fdfc33", 
-  "data_name": "axbc-snap", 
+  "backup_data_uid": "b7d96f5078dd48fd", 
+  "data_name": "mgbc-snap", 
   "no_compile": "yes", 
   "no_target_file": "yes", 
   "print_files_after_run": [
@@ -13,36 +13,34 @@
     "default": {
       "ignore_return_code": "no", 
       "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_via_ck": "yes", 
-        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_AXBC_BIN>>$ -f $<<CK_ENV_DATASET_SNAP_FULL_NAME>>$ -p 1x1 -n $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -N 100 -c 0 -x 1 -d 0 -H 0 -o $<<CK_ENV_DATASET_SNAP_GRAPH_NAME>>$.out", 
+        "post_process_via_ck": "no", 
+        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_BC_BIN>>$ -f $<<CK_ENV_DATASET_SNAP_FULL_NAME>>$ -p 1x1 -n $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -N $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -H 0 -o $<<CK_ENV_DATASET_SNAP_GRAPH_NAME>>$.out", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
           "stdout.log", 
-          "stderr.log", 
-          "tmp-ck-timer.json"
+          "stderr.log" 
         ]
       }
     }
   }, 
   "run_deps": {
-    "lib-axbc": {
-      "local": "yes", 
-      "name": "Approximating BC", 
-      "sort": 10, 
-      "tags": "lib,abc,bc,approximation"
-    },
     "dataset-snap": {
       "local": "yes", 
       "name": "Snap dataset", 
       "sort": 10, 
       "tags": "dataset,graph,snap"
+    }, 
+    "lib-mgbc": {
+      "local": "yes", 
+      "name": "Multi-GPU BC", 
+      "sort": 10, 
+      "tags": "lib,bc,exact"
     }
   }, 
   "run_vars": {
+    "CK_GRAPH_NAME": "facebook_combined.txt", 
     "CK_MPI_PROCESS": 1, 
-    "CK_GRAPH_NAME":"facebook_combined.txt",
     "CK_NUM_VERTICES": 4039
   }, 
   "tags": [

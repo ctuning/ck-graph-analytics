@@ -1,6 +1,9 @@
 #!/bin/bash
 
 cd ${INSTALL_DIR}
+echo "THIS VERSION IS LONGER SUPPORTED"
+echo "EXIT"
+exit 0
 echo "Download "
 # list.txt contains: graph_name n_vertices n_edges max_vertex_d
 # if list.txt exits remove it
