@@ -1,0 +1,32 @@
+{
+  "check_exit_status": "yes", 
+  "comment": "CAREFUL - requires more the 1GB of free space", 
+  "customize": {
+    "extra_dir": "", 
+    "force_ask_path": "yes", 
+    "install_env": {
+      "GRAPH_NAME": "com-orkut", 
+      "MAX_VERTEX_ID": 3072626, 
+      "NUM_OF_VERTICES": 3072628
+    }, 
+    "no_os_in_suggested_path": "yes", 
+    "no_ver_in_suggested_path": "yes", 
+    "version": "1.0"
+  }, 
+  "end_full_path": {
+    "linux": "com-orkut.ungraph.txt"
+  }, 
+  "package_extra_name": " (SNAP Graphs)", 
+  "process_script": "install", 
+  "soft_uoa": "044f7304f07a7c34", 
+  "suggested_path": "dataset-snap-com-orkut", 
+  "tags": [
+    "dataset", 
+    "graph", 
+    "real-world", 
+    "snap", 
+    "orkut", 
+    "large", 
+    "social-network"
+  ]
+}
