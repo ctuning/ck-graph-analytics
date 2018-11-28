@@ -51,6 +51,13 @@ cd ${INSTALL_DIR}/src/src
         mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_16tpv
         mv ${DEST_DIR}/egsolver_default ${DEST_DIR}/egsolver
 
+cd ${INSTALL_DIR}/src/script/multi
+    make
+    cp multi ${DEST_DIR}
+if [ "${?}" != "0" ] ; then
+  echo "Error: make failed!"
+  exit 1
+fi
 
 echo "DEBUG INFO"
 pwd
@@ -59,11 +66,5 @@ echo $CUDA_HOME
 echo $CUDA_ARC
 echo $CUDA_CODE
 echo $CK_CC
-
-if [ "${?}" != "0" ] ; then
-  echo "Error: make failed!"
-  exit 1
-fi
-
 
 return 0
