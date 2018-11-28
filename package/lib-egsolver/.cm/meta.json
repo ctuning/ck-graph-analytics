@@ -5,7 +5,8 @@
     "extra_dir": "", 
     "git_src_dir": "src", 
     "install_env": {
-      "CUDA_ARC": "-arch=sm_70", 
+      "CUDA_ARC": "-arch=compute_60", 
+      "CUDA_CODE": "-code=sm_70", 
       "PACKAGE_BUILD_TYPE": "make", 
       "PACKAGE_CONFIGURE_FLAGS": "", 
       "PACKAGE_COPY": "NO", 
