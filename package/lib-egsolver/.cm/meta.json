@@ -36,13 +36,6 @@
       "name": "Nvidia CUDA", 
       "sort": 0, 
       "tags": "compiler,cuda,lang-c-cuda"
-    }, 
-    "lib-openmpi": {
-      "local": "yes", 
-      "name": "OpenMPI library", 
-      "skip_default": "yes", 
-      "sort": 30, 
-      "tags": "lib,mpi,openmpi"
     }
   }, 
   "end_full_path": {

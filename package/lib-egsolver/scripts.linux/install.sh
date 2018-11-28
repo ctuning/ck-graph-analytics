@@ -30,11 +30,17 @@ if [ ! -d ${DEST_DIR} ] ; then
   fi
 
 cd ${INSTALL_DIR}/src/src
-      make \
+      make -f Makefile.ck all\
            DEST_DIR=${DEST_DIR}  \
            CUDA_HOME=${CUDA_HOME} \
            CUDA_ARCH=${CUDA_ARC}  \
            SOLVER_VERSION=${VERSION}
+
+pwd
+echo $DEST_DIR
+echo $CUDA_HOME
+echo $CUDA_ARC
+echo $CK_CC
 
 if [ "${?}" != "0" ] ; then
   echo "Error: make failed!"
