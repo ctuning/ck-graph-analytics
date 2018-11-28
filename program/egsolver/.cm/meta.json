@@ -1,0 +1,72 @@
+{
+  "backup_data_uid": "a53400ba790a753f", 
+  "data_name": "egsolver", 
+  "no_compile": "yes", 
+  "no_target_file": "yes", 
+  "print_files_after_run": [
+    "stderr.log", 
+    "stdout.log"
+  ], 
+  "process_in_tmp": "yes", 
+  "program": "yes", 
+  "run_cmds": {
+    "default": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "post_process_via_ck": "no", 
+        "run_cmd_main": "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg0 --gpu --timeout $<<CK_EG_TIMEOUT>>$ --tb $<<CK_EG_GPU_TB>>$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "stderr.log", 
+        "run_output_files": [
+          "stdout.log", 
+          "stderr.log"
+        ]
+      }
+    }, 
+    "cpu-eg0": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "post_process_via_ck": "no", 
+        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg0 --cpu --timeout $<<CK_EG_TIMEOUT>>$", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "stderr.log", 
+        "run_output_files": [
+          "stdout.log", 
+          "stderr.log"
+        ]
+      }
+    },
+    "run-egsolver-experiment-gpu": {
+      "ignore_return_code": "no", 
+      "run_time": {
+        "post_process_via_ck": "no", 
+        "run_cmd_main": "../runner_cpu", 
+        "run_cmd_out1": "stdout.log", 
+        "run_cmd_out2": "stderr.log", 
+        "run_output_files": [
+          "stdout.log", 
+          "stderr.log"
+        ]
+      }
+    }
+  }, 
+  "run_deps": {
+    "lib-egsolver": {
+      "local": "yes", 
+      "name": "EGSolver", 
+      "sort": 10, 
+      "tags": "lib,egsolver,energy-games"
+    }
+  }, 
+  "run_vars": {
+    "CK_EG_GPU_TB": 256, 
+    "CK_EG_CPU_OMP_THREADS": 4, 
+    "CK_EG_TIMEOUT": 120,
+    "CK_EG_INPUT":"$CK_TOOLS/lib-egsolver-gcc-5.4.0-linux-64/src/script/prova.mpg.gz",
+    "CK_EG_DATASET_PATH": "",
+    "CK_EG_DATASET_PATH_OUPUT": ""
+  }, 
+  "tags": [
+    "graph"
+  ]
+}

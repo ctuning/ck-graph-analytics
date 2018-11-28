@@ -1,0 +1,16 @@
+SOLVER=$CK_ENV_EG_BIN 
+
+for istanza in $CK_EG_DATASET_PATH/*.mpg* ; do \
+tem=`basename $istanza .gz`
+sol=`basename $tem .mpg`
+echo ;
+date ;
+echo "$tem --> $sol.sol" ;
+$SOLVER  --input $istanza  --eg  --cpu --solve --timeout 300  > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+echo "--------------------------";
+sleep 5 ;
+done
+
+
+echo "==========================";
+
