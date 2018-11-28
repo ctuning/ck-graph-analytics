@@ -6,7 +6,7 @@ export OMP_NUM_THREADS=${CK_EG_CPU_OMP_THREADS}
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH
 echo "EGSolver BIN PATH: "$SOLVER
-echo "THREADS: "${OMP_NUM_THREADS}
+echo "THREAD BLOCK: "${CK_EG_GPU_TB}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "Algorithm: "${CK_EG_ALG}
 exit 1
@@ -18,7 +18,7 @@ sol=`basename $tem .mpg`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  --${CK_EG_ALG}  --cpu --solve --timeout ${CK_EG_TIMEOUT}  > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+$SOLVER  --input $istanza  --eg  --cpu --solve --timeout ${TIMEOUT}  --tb ${CK_EG_GPU_TB} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
 echo "--------------------------";
 sleep 5 ;
 done
