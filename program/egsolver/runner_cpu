@@ -21,8 +21,9 @@ if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
 then
       echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
       echo "Creating "`pwd`"/output"
-      mkdir -p tmp-ouptup
-      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output
+      
+      mkdir -p $CK_EG_DATASET_PATH_OUTPUT
       echo $CK_EG_DATASET_PATH_OUTPUT
 fi 
 

@@ -75,7 +75,7 @@
     "CK_EG_GPU_TB": 256, 
     "CK_EG_CPU_OMP_THREADS": 4, 
     "CK_EG_TIMEOUT": 120,
-    "CK_EG_INPUT":"$CK_TOOLS/lib-egsolver-gcc-5.4.0-linux-64/src/script/prova.mpg.gz",
+    "CK_EG_INPUT":"../prova.mpg.gz",
     "CK_EG_DATASET_PATH": "",
     "CK_EG_DATASET_PATH_OUPUT": "",
     "CK_EG_ALG": "eg0"
