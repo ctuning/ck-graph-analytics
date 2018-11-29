@@ -49,6 +49,13 @@ cd ${INSTALL_DIR}/src/src
         cp dev_EG_alg_shfl_full_16tpv.cu dev_EG_alg.cu
         make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
         mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_16tpv
+        # making with shuffle 16:
+        cp dev_EG_alg_shfl_full_32tpv.cu dev_EG_alg.cu
+        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_32tpv
+
+
+
         mv ${DEST_DIR}/egsolver_default ${DEST_DIR}/egsolver
 
 cd ${INSTALL_DIR}/src/script/multi
