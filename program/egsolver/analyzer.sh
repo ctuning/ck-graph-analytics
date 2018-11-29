@@ -20,6 +20,7 @@ echo ;
 mytime=`grep "Solving time:" $istanza | cut -d " " -f14`  
 echo $tem $mytime
 echo $tem $mytime >> exp.data 2>&1 
+mv exp.data ${CK_EG_DATASET_PATH_OUTPUT}
 echo "--------------------------";
 sleep 5 ;
 done

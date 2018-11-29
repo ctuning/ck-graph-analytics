@@ -1,4 +1,13 @@
-SOLVER=$CK_ENV_EG_BIN 
+SOLVER=$CK_ENV_EG_BIN
+
+if [ -z "$CK_EG_SOLVER" ]
+then
+   SOLVER=$CK_ENV_EG_BIN
+else
+   SOLVER=${CK_ENV_EG}/bin/${CK_EG_SOLVER}
+fi
+
+
 CK_EG_ALG="--eg"
 #VARIABLE USED
 echo "##########################################"
@@ -24,7 +33,7 @@ if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
 then
       echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
       echo "Creating "`pwd`"/output"
-      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output-${CK_EG_SOLVER}
       
       mkdir -p $CK_EG_DATASET_PATH_OUTPUT
       echo $CK_EG_DATASET_PATH_OUTPUT
