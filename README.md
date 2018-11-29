@@ -27,7 +27,7 @@ $ sudo pip install ck
 # CK workflow installation with application dependencies
 
 ```
-$ ck pull repo:ck-graph-analytic
+$ ck pull repo:ck-graph-analytics
 ```
 
 ## Intel MPI Library

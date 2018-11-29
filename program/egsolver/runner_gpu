@@ -1,28 +1,56 @@
 SOLVER=$CK_ENV_EG_BIN 
-export OMP_NUM_THREADS=${CK_EG_CPU_OMP_THREADS}
-
+CK_EG_ALG="--eg"
 #VARIABLE USED
-
+echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
-echo "Output PATH: "$CK_EG_DATASET_PATH
+echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$SOLVER
 echo "THREAD BLOCK: "${CK_EG_GPU_TB}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "Algorithm: "${CK_EG_ALG}
-exit 1
+echo "Extra Options: "${CK_EXTRA_OPT}
+echo "##########################################"
+
+
+
+
+if [ -z "$CK_EG_DATASET_PATH" ]
+then
+      echo "ERROR!!!! CK_EG_DATASET_PATH is not defined"
+      exit 0
+fi 
+
+if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
+then
+      echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
+      echo "Creating "`pwd`"/output"
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output
+      
+      mkdir -p $CK_EG_DATASET_PATH_OUTPUT
+      echo $CK_EG_DATASET_PATH_OUTPUT
+fi 
+
 
 
 for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
 tem=`basename $istanza .gz`
-sol=`basename $tem .mpg`
+sol=`basename $tem .txt`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  --eg  --cpu --solve --timeout ${TIMEOUT}  --tb ${CK_EG_GPU_TB} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
 echo "--------------------------";
 sleep 5 ;
 done
-
-
 echo "==========================";
+# copy configuration of the experiment
+echo "Dataset PATH: "$CK_EG_DATASET_PATH > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "EGSolver BIN PATH: "$SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "THREADS PER BLOCK: "${CK_EG_GPU_TB} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "TIMEOUT: "${CK_EG_TIMEOUT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Algorithm: "${CK_EG_ALG} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Extra Options: "${CK_EXTRA_OPT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "##########################################"
+
 

@@ -78,7 +78,9 @@
     "CK_EG_INPUT":"../prova.mpg.gz",
     "CK_EG_DATASET_PATH": "",
     "CK_EG_DATASET_PATH_OUPUT": "",
-    "CK_EG_ALG": "eg0"
+    "CK_EG_ALG": "eg0",
+    "CK_EXTRA_OPT": "--noout"
+
   }, 
   "tags": [
     "graph"

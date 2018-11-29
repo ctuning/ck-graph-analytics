@@ -9,6 +9,7 @@ echo "EGSolver BIN PATH: "$SOLVER
 echo "THREADS: "${OMP_NUM_THREADS}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "Algorithm: "${CK_EG_ALG}
+echo "Extra Options: "${CK_EXTRA_OPT}
 echo "##########################################"
 
 if [ -z "$CK_EG_DATASET_PATH" ]
@@ -29,17 +30,27 @@ fi
 
 
 
-for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
+for istanza in $CK_EG_DATASET_PATH/*.*.gz ; do \
 tem=`basename $istanza .gz`
 sol=`basename $tem .txt`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  --${CK_EG_ALG}  --cpu --solve --timeout ${CK_EG_TIMEOUT}  > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+$SOLVER  --input $istanza  --${CK_EG_ALG}  --cpu  --timeout ${CK_EG_TIMEOUT} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
 echo "--------------------------";
 sleep 5 ;
 done
 
 
 echo "==========================";
+# copy configuration of the experiment
+echo "Dataset PATH: "$CK_EG_DATASET_PATH > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "EGSolver BIN PATH: "$SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "THREADS: "${OMP_NUM_THREADS} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "TIMEOUT: "${CK_EG_TIMEOUT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Algorithm: "${CK_EG_ALG} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Extra Options: "${CK_EXTRA_OPT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "##########################################"
+
 
