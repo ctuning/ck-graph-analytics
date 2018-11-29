@@ -12,7 +12,7 @@ echo "Algorithm: "${CK_EG_ALG}
 exit 1
 
 
-for istanza in $CK_EG_DATASET_PATH/*.mpg* ; do \
+for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
 tem=`basename $istanza .gz`
 sol=`basename $tem .mpg`
 echo ;

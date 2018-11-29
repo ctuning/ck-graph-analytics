@@ -2,19 +2,35 @@ SOLVER=$CK_ENV_EG_BIN
 export OMP_NUM_THREADS=${CK_EG_CPU_OMP_THREADS}
 
 #VARIABLE USED
-
+echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
-echo "Output PATH: "$CK_EG_DATASET_PATH
+echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$SOLVER
 echo "THREADS: "${OMP_NUM_THREADS}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "Algorithm: "${CK_EG_ALG}
-exit 1
+echo "##########################################"
+
+if [ -z "$CK_EG_DATASET_PATH" ]
+then
+      echo "ERROR!!!! CK_EG_DATASET_PATH is not defined"
+      exit 0
+fi 
+
+if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
+then
+      echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
+      echo "Creating "`pwd`"/output"
+      mkdir -p tmp-ouptup
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp
+      echo $CK_EG_DATASET_PATH_OUTPUT
+fi 
 
 
-for istanza in $CK_EG_DATASET_PATH/*.mpg* ; do \
+
+for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
 tem=`basename $istanza .gz`
-sol=`basename $tem .mpg`
+sol=`basename $tem .txt`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
