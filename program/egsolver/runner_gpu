@@ -3,6 +3,7 @@ SOLVER=$CK_ENV_EG_BIN
 if [ -z "$CK_EG_SOLVER" ]
 then
    SOLVER=$CK_ENV_EG_BIN
+   CK_EG_SOLVER="default" 
 else
    SOLVER=${CK_ENV_EG}/bin/${CK_EG_SOLVER}
 fi
@@ -40,7 +41,7 @@ then
 fi 
 
 
-
+start=`date`
 for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
 tem=`basename $istanza .gz`
 sol=`basename $tem .txt`
@@ -52,14 +53,17 @@ echo "--------------------------";
 sleep 5 ;
 done
 echo "==========================";
+end=`date`
 # copy configuration of the experiment
-echo "Dataset PATH: "$CK_EG_DATASET_PATH > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Start Experiment: "$start > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Dataset PATH: "$CK_EG_DATASET_PATH >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "EGSolver BIN PATH: "$SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "THREADS PER BLOCK: "${CK_EG_GPU_TB} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "TIMEOUT: "${CK_EG_TIMEOUT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Algorithm: "${CK_EG_ALG} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Extra Options: "${CK_EXTRA_OPT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "End Experiment: "$end >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "##########################################"
 
 
