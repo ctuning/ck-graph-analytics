@@ -17,9 +17,10 @@ tem=`basename $istanza .txt`
 sol=`basename $tem .txt`
 echo ;
 #echo "$tem --> $sol.sol" ;
-mytime=`grep "Solving time:" $istanza | cut -d " " -f12`
-usec=0
-avgdeg=
+mytime=`grep "Solving time:" $istanza | cut -d " " -f1`
+usec=`grep "Nodes per second:" $istanza | cut -d " " -f1`
+avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f1`
+
 echo $tem $avgdeg $mytime $usec
 echo $tem $avgdeg $mytime $usec >> exp.data 2>&1 
 mv exp.data ${CK_EG_DATASET_PATH_OUTPUT}
