@@ -14,7 +14,7 @@
       "ignore_return_code": "no", 
       "run_time": {
         "post_process_via_ck": "no", 
-        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg --gpu --timeout $<<CK_EG_TIMEOUT>>$ --tb $<<CK_EG_GPU_TB>>$", 
+        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg --gpu --timeout $<<CK_EG_TIMEOUT>>$ --tb --noout $<<CK_EG_GPU_TB>>$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
@@ -27,7 +27,7 @@
       "ignore_return_code": "no", 
       "run_time": {
         "post_process_via_ck": "no", 
-        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg0 --cpu --timeout $<<CK_EG_TIMEOUT>>$", 
+        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg0 --cpu --timeout $<<CK_EG_TIMEOUT>>$ --noout", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
         "run_output_files": [
