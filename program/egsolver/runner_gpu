@@ -43,7 +43,7 @@ fi
 
 
 start=`date`
-for istanza in $CK_EG_DATASET_PATH/*.txt* ; do \
+for istanza in $CK_EG_DATASET_PATH/*.*.gz ; do \
 tem=`basename $istanza .gz`
 sol=`basename $tem .txt`
 echo ;
