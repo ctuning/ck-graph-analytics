@@ -82,6 +82,12 @@
       "name": "EGSolver", 
       "sort": 10, 
       "tags": "lib,egsolver,energy-games"
+    },
+    "dataset-egsolver": {
+      "local": "yes", 
+      "name": "EGSolver", 
+      "sort": 10, 
+      "tags": "dataset,egsolver,graphs"
     }
   }, 
   "run_vars": {
