@@ -95,7 +95,7 @@
     "CK_EG_CPU_OMP_THREADS": 4, 
     "CK_EG_TIMEOUT": 900,
     "CK_EG_INPUT":"../prova.mpg.gz",
-    "CK_EG_DATASET_PATH": "",
+    "CK_EG_DATASET_PATH": "$CK_ENV_DATASET_EGSOLVER",
     "CK_EG_DATASET_PATH_OUPUT": "",
     "CK_EG_ALG": "eg0",
     "CK_EXTRA_OPT": "--noout"
