@@ -17,9 +17,9 @@ tem=`basename $istanza .txt`
 sol=`basename $tem .txt`
 echo ;
 #echo "$tem --> $sol.sol" ;
-mytime=`grep "Solving time:" $istanza | cut -d " " -f1`
-usec=`grep "Nodes per second:" $istanza | cut -d " " -f1`
-avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f1`
+mytime=`grep "Solving time:" $istanza | cut -d " " -f3`
+usec=`grep "Nodes per second:" $istanza | cut -d " " -f4`
+avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f3`
 
 echo $tem $avgdeg $mytime $usec
 echo $tem $avgdeg $mytime $usec >> exp.data 2>&1 
