@@ -17,7 +17,7 @@
   "end_full_path": {
     "linux": "ladder_10000_cp2.txt.gz"
   }, 
-  "package_extra_name": " (EGSolver Graphs)", 
+  "package_extra_name": " (EGSolver Graphs Ladder)", 
   "process_script": "install", 
   "soft_uoa": "04a7a93a5b1436a6", 
   "suggested_path": "dataset-egsolver-ladder", 
@@ -26,6 +26,7 @@
     "graph", 
     "egsolver", 
     "large", 
-    "synthetic"
+    "synthetic",
+    "ladder"
   ]
 }
