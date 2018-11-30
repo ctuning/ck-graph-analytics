@@ -47,7 +47,15 @@
           "stdout.log", 
           "stderr.log"
         ]
+      },
+      "run_deps": {
+       "dataset-egsolver": {
+         "local": "yes", 
+         "name": "EGSolver", 
+         "sort": 10, 
+         "tags": "dataset,egsolver,graphs"
       }
+     }
     },
     "run-egsolver-experiment-cpu": {
       "ignore_return_code": "no", 
@@ -60,7 +68,15 @@
           "stdout.log", 
           "stderr.log"
         ]
+      },
+      "run_deps": {
+       "dataset-egsolver": {
+         "local": "yes", 
+         "name": "EGSolver", 
+         "sort": 10, 
+         "tags": "dataset,egsolver,graphs"
       }
+     }
     },
     "analyzer": {
       "ignore_return_code": "no", 
@@ -82,12 +98,6 @@
       "name": "EGSolver", 
       "sort": 10, 
       "tags": "lib,egsolver,energy-games"
-    },
-    "dataset-egsolver": {
-      "local": "yes", 
-      "name": "EGSolver", 
-      "sort": 10, 
-      "tags": "dataset,egsolver,graphs"
     }
   }, 
   "run_vars": {
