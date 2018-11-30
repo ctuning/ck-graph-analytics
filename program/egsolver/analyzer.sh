@@ -23,10 +23,10 @@ avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f3`
 
 echo $tem $avgdeg $mytime $usec
 echo $tem $avgdeg $mytime $usec >> exp.data 2>&1 
-mv exp.data ${CK_EG_DATASET_PATH_OUTPUT}
 echo "--------------------------";
 sleep 5 ;
 done
+mv exp.data ${CK_EG_DATASET_PATH_OUTPUT}
 
 
 echo "==========================";
