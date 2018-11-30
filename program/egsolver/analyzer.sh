@@ -22,11 +22,10 @@ usec=`grep "Nodes per second:" $istanza | cut -d " " -f4`
 avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f3`
 
 echo $tem $avgdeg $mytime $usec
-echo $tem $avgdeg $mytime $usec >> exp.data 2>&1 
+echo $tem $avgdeg $mytime $usec >> experimental-results.data 2>&1 
 echo "--------------------------";
-sleep 5 ;
 done
-mv exp.data ${CK_EG_DATASET_PATH_OUTPUT}
+mv experimental-results.data ${CK_EG_DATASET_PATH_OUTPUT}
 
 
 echo "==========================";
