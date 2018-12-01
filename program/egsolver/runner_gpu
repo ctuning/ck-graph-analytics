@@ -49,7 +49,7 @@ sol=`basename $tem`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
 echo "--------------------------";
 sleep 5 ;
 done
