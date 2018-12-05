@@ -21,11 +21,24 @@ mytime=`grep "Solving time:" $istanza | cut -d " " -f3`
 usec=`grep "Nodes per second:" $istanza | cut -d " " -f4`
 avgdeg=`grep "Avg out-degree" $istanza | cut -d " " -f3`
 
+
+if [ -z "$mytime" ]
+then
+    mytime=0
+fi
+if [ -z "$mytime" ]
+then
+    usec=0
+fi
+if [ -z "$mytime" ]
+then
+    avgdeg=0
+fi
 echo $tem $avgdeg $mytime $usec
-echo $tem $avgdeg $mytime $usec >> experimental-results.data 2>&1 
+echo $tem $avgdeg $mytime $usec >> dataset-results.txt 2>&1 
 echo "--------------------------";
 done
-mv experimental-results.data ${CK_EG_DATASET_PATH_OUTPUT}
+mv dataset-results.txt ${CK_EG_DATASET_PATH_OUTPUT}
 
 
 echo "==========================";

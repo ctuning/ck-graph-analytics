@@ -17,6 +17,10 @@
         "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg --gpu --timeout $<<CK_EG_TIMEOUT>>$ --noout --tb $<<CK_EG_GPU_TB>>$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
+        "post_process_cmds":[
+          "grep Solving stdout.log > test-postp.txt"
+        ],
+
         "run_output_files": [
           "stdout.log", 
           "stderr.log"
@@ -40,6 +44,9 @@
       "ignore_return_code": "no", 
       "run_time": {
         "post_process_via_ck": "no", 
+        "post_process_cmds":[
+          "../anayzer.sh"
+        ],
         "run_cmd_main": "../runner_gpu", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
@@ -103,7 +110,7 @@
   "run_vars": {
     "CK_EG_GPU_TB": 256, 
     "CK_EG_CPU_OMP_THREADS": 4, 
-    "CK_EG_TIMEOUT": 900,
+    "CK_EG_TIMEOUT": 120,
     "CK_EG_INPUT":"../prova.mpg.gz",
     "CK_EG_DATASET_PATH": "$CK_ENV_DATASET_EGSOLVER",
     "CK_EG_DATASET_PATH_OUPUT": "",
