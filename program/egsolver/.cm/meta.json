@@ -44,9 +44,6 @@
       "ignore_return_code": "no", 
       "run_time": {
         "post_process_via_ck": "no", 
-        "post_process_cmds":[
-          "../anayzer.sh"
-        ],
         "run_cmd_main": "../runner_gpu", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stderr.log", 
@@ -84,20 +81,7 @@
          "tags": "dataset,egsolver,graphs"
       }
      }
-    },
-    "analyzer": {
-      "ignore_return_code": "no", 
-      "run_time": {
-        "post_process_via_ck": "no", 
-        "run_cmd_main": "../analyzer.sh", 
-        "run_cmd_out1": "stdout.log", 
-        "run_cmd_out2": "stderr.log", 
-        "run_output_files": [
-          "stdout.log", 
-          "stderr.log"
-        ]
-      }
-    }
+    }    
   }, 
   "run_deps": {
     "lib-egsolver": {

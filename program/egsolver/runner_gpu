@@ -49,7 +49,28 @@ sol=`basename $tem`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1 
+$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
+
+soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
+mytime=`grep "Solving time:" $soloutput | cut -d " " -f3`
+usec=`grep "Nodes per second:" $soloutput | cut -d " " -f4`
+avgdeg=`grep "Avg out-degree" $soloutput | cut -d " " -f3`
+if [ -z "$mytime" ]
+then
+    mytime=0
+fi
+if [ -z "$mytime" ]
+then
+    usec=0
+fi
+if [ -z "$mytime" ]
+then
+    avgdeg=0
+fi
+echo $tem $avgdeg $mytime $usec
+echo $tem $avgdeg $mytime $usec >> $CK_EG_DATASET_PATH_OUTPUT/dataset-results.txt 2>&1
+echo "--------------------------";
+ 
 echo "--------------------------";
 sleep 5 ;
 done
@@ -67,4 +88,4 @@ echo "Extra Options: "${CK_EXTRA_OPT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.t
 echo "End Experiment: "$end >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "##########################################"
 
-
+export CK_EG_DATASET_PATH_OUTPUT
