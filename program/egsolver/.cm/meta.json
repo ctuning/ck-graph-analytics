@@ -94,7 +94,7 @@
   "run_vars": {
     "CK_EG_GPU_TB": 256, 
     "CK_EG_CPU_OMP_THREADS": 4, 
-    "CK_EG_TIMEOUT": 120,
+    "CK_EG_TIMEOUT": 600,
     "CK_EG_INPUT":"../prova.mpg.gz",
     "CK_EG_DATASET_PATH": "$CK_ENV_DATASET_EGSOLVER",
     "CK_EG_DATASET_PATH_OUPUT": "",
