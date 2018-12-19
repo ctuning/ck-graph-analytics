@@ -9,7 +9,7 @@ model=9e6cd41c8f44203b
 dataset=$clique
 echo "Clique" $dataset
 ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --deps.dataset-egsolver=$dataset
-ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_2tp --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_2tpv --deps.dataset-egsolver=$dataset
 ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_4tpv --deps.dataset-egsolver=$dataset
 ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_8tpv --deps.dataset-egsolver=$dataset
 ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_16tpv --deps.dataset-egsolver=$dataset
@@ -18,14 +18,35 @@ ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVE
 
 dataset=$equiv
 echo "Equivalent" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_2tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_4tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_8tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_16tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_32tpv --deps.dataset-egsolver=$dataset
+
 
 dataset=$ladder
 echo "Ladder" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_2tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_4tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_8tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_16tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_32tpv --deps.dataset-egsolver=$dataset
 
 
 
-set=$model
+
+dataset=$model
 echo "Model" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_2tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_4tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_8tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_16tpv --deps.dataset-egsolver=$dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-gpu --env.CK_EG_SOLVER=egsolver_shfl_full_32tpv --deps.dataset-egsolver=$dataset
+
 
 
 
