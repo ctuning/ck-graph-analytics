@@ -1,17 +1,17 @@
 {
-  "auto_detect": "no", 
+  "auto_detect": "no",
   "customize": {
-    "add_include_path": "yes", 
+    "add_include_path": "yes",
     "env_prefix": "CK_ENV_LIB_CUB"
-  }, 
-  "deps": {}, 
-  "skip_file_check": "yes", 
-  "soft_name": "Nvidia CUB library", 
+  },
+  "deps": {},
+  "skip_file_check": "yes",
+  "soft_name": "Nvidia CUB library",
   "tags": [
-    "src", 
-    "lib", 
-    "cub", 
-    "nvidia", 
+    "src",
+    "lib",
+    "cub",
+    "nvidia",
     "utils",
     "cuda"
   ]

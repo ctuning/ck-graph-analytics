@@ -1,44 +1,44 @@
 {
-  "backup_data_uid": "cf69864428993f52", 
-  "data_name": "axbc-demo", 
-  "no_compile": "yes", 
-  "no_target_file": "yes", 
+  "backup_data_uid": "cf69864428993f52",
+  "data_name": "axbc-demo",
+  "no_compile": "yes",
+  "no_target_file": "yes",
   "print_files_after_run": [
-    "stderr.log", 
+    "stderr.log",
     "stdout.log"
-  ], 
-  "process_in_tmp": "yes", 
-  "program": "yes", 
+  ],
+  "process_in_tmp": "yes",
+  "program": "yes",
   "run_cmds": {
     "default": {
-      "ignore_return_code": "no", 
+      "ignore_return_code": "no",
       "run_time": {
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
-        "post_process_via_ck": "yes", 
-        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_AXBC_BIN>>$ -S $<<CK_RMAT_SCALE>>$  -E $<<CK_RMAT_EF>>$ -p 1x1 -N 100 -c 0 -x 1 -d 0 -H 0", 
-        "run_cmd_out1": "stdout.log", 
-        "run_cmd_out2": "stderr.log", 
+        "fine_grain_timer_file": "tmp-ck-timer.json",
+        "post_process_via_ck": "yes",
+        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_AXBC_BIN>>$ -S $<<CK_RMAT_SCALE>>$  -E $<<CK_RMAT_EF>>$ -p 1x1 -N 100 -c 0 -x 1 -d 0 -H 0",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "stderr.log",
         "run_output_files": [
-          "stdout.log", 
-          "stderr.log", 
+          "stdout.log",
+          "stderr.log",
           "tmp-ck-timer.json"
         ]
       }
     }
-  }, 
+  },
   "run_deps": {
     "lib-axbc": {
-      "local": "yes", 
-      "name": "Approximating BC", 
-      "sort": 10, 
+      "local": "yes",
+      "name": "Approximating BC",
+      "sort": 10,
       "tags": "lib,abc,bc,approximation"
     }
-  }, 
+  },
   "run_vars": {
-    "CK_RMAT_SCALE": 10, 
-    "CK_RMAT_EF": 4, 
-    "CK_MPI_PROCESS": 1
-  }, 
+    "CK_MPI_PROCESS": 1,
+    "CK_RMAT_EF": 4,
+    "CK_RMAT_SCALE": 10
+  },
   "tags": [
     "graph"
   ]

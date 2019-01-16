@@ -1,11 +1,11 @@
 {
   "customize": {
     "env_prefix": "CK_ENV_AXBC"
-  }, 
-  "soft_name": "Approximating BC on Multi-GPU", 
+  },
+  "soft_name": "Approximating BC on Multi-GPU",
   "tags": [
-    "lib", 
-    "graph500", 
+    "lib",
+    "graph500",
     "betweeness-centraliy",
     "bc",
     "abc",

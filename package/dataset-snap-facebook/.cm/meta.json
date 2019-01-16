@@ -1,27 +1,27 @@
 {
-  "check_exit_status": "yes", 
-  "comment": "CAREFUL - requires more the 1GB of free space", 
+  "check_exit_status": "yes",
+  "comment": "CAREFUL - requires more the 1GB of free space",
   "customize": {
-    "extra_dir": "", 
-    "force_ask_path": "yes", 
+    "extra_dir": "",
+    "force_ask_path": "yes",
     "install_env": {
       "GRAPH_NAME": "facebook",
-      "NUM_OF_VERTICES": 4039, 
-      "MAX_VERTEX_ID": 4038
-    }, 
-    "no_os_in_suggested_path": "yes", 
-    "no_ver_in_suggested_path": "yes", 
+      "MAX_VERTEX_ID": 4038,
+      "NUM_OF_VERTICES": 4039
+    },
+    "no_os_in_suggested_path": "yes",
+    "no_ver_in_suggested_path": "yes",
     "version": "1.0"
-  }, 
+  },
   "end_full_path": {
     "linux": "facebook_combined.txt"
-  }, 
-  "package_extra_name": " (SNAP Graphs)", 
-  "process_script": "install", 
-  "soft_uoa": "044f7304f07a7c34", 
-  "suggested_path": "dataset-snap-facebook", 
+  },
+  "package_extra_name": " (SNAP Graphs)",
+  "process_script": "install",
+  "soft_uoa": "044f7304f07a7c34",
+  "suggested_path": "dataset-snap-facebook",
   "tags": [
-    "dataset", 
+    "dataset",
     "graph",
     "real-world",
     "snap",

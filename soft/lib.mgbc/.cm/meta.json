@@ -1,13 +1,13 @@
 {
   "customize": {
     "env_prefix": "CK_ENV_BC"
-  }, 
-  "soft_name": "BC on Multi-GPU", 
+  },
+  "soft_name": "BC on Multi-GPU",
   "tags": [
-    "lib", 
-    "graph500", 
-    "betweeness-centraliy", 
-    "bc", 
+    "lib",
+    "graph500",
+    "betweeness-centraliy",
+    "bc",
     "exact"
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "auto_detect": "no", 
+  "auto_detect": "no",
   "customize": {
-    "check_that_exists": "yes", 
-    "ck_version": 10, 
+    "check_that_exists": "yes",
+    "ck_version": 10,
     "env_prefix": "CK_ENV_DATASET_SNAP"
-  }, 
-  "deps": {}, 
-  "soft_name": "SNAP graph dataset", 
+  },
+  "deps": {},
+  "soft_name": "SNAP graph dataset",
   "tags": [
-    "dataset", 
+    "dataset",
     "graphs",
     "real-world",
     "snap"

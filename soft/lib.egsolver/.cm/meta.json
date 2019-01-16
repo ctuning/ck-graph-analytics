@@ -1,12 +1,12 @@
 {
   "customize": {
     "env_prefix": "CK_ENV_EG"
-  }, 
-  "soft_name": "EG Solver on Modern Parallel Architecture", 
+  },
+  "soft_name": "EG Solver on Modern Parallel Architecture",
   "tags": [
-    "lib", 
-    "energy-games", 
-    "games", 
+    "lib",
+    "energy-games",
+    "games",
     "gpu"
   ]
 }

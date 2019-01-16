@@ -1,15 +1,15 @@
 {
-  "auto_detect": "no", 
+  "auto_detect": "no",
   "customize": {
-    "check_that_exists": "yes", 
-    "ck_version": 10, 
+    "check_that_exists": "yes",
+    "ck_version": 10,
     "env_prefix": "CK_ENV_DATASET_EGSOLVER"
-  }, 
-  "deps": {}, 
-  "soft_name": "EGSolver graph dataset", 
+  },
+  "deps": {},
+  "soft_name": "EGSolver graph dataset",
   "tags": [
-    "dataset", 
-    "graphs", 
+    "dataset",
+    "graphs",
     "egsolver"
   ]
 }
