@@ -1,5 +1,7 @@
 #!/bin/bash
-
+CK_EG_SOLVER=${CK_ENV_EG_BIN}
+# to fix 
+CK_EG_SOLVER_NAME=egsolver
 
 
 CK_EG_ALG="--eg 4"
@@ -7,13 +9,13 @@ CK_EG_ALG="--eg 4"
 echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
-echo "EGSolver BIN PATH: "$SOLVER
+echo "EGSolver BIN PATH: "$CK_EG_SOLVER
 echo "Version: "${CK_EG_VERSION} 
 echo "Configuration": ${CK_EG_OUTDEGREE}
 echo "Algorithm: "${CK_EG_ALG}
 
 echo "THREAD BLOCK: "${CK_EG_GPU_TB}
-echo "Threshold": "${CK_EG_THRESHOLD}
+echo "Threshold": ${CK_EG_THRESHOLD}
 echo "Extra Options: "${CK_EXTRA_OPT}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "##########################################"
@@ -31,7 +33,7 @@ if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
 then
       echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
       echo "Creating "`pwd`"/output"
-      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output-${CK_EG_SOLVER}-${CK_ENV_DATASET_EGSOLVER_DATASET_NAME}
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output-${CK_EG_SOLVER_NAME}-${CK_ENV_DATASET_EGSOLVER_DATASET_NAME}
       
       mkdir -p $CK_EG_DATASET_PATH_OUTPUT
       echo $CK_EG_DATASET_PATH_OUTPUT
@@ -45,7 +47,7 @@ sol=`basename $tem`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT} ${CK_EG_OUTDEGREE}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
+$CK_EG_SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT} ${CK_EG_OUTDEGREE}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
 
 soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
 mytime=`grep "Solving time:" $soloutput | cut -d " " -f3`
@@ -76,7 +78,7 @@ end=`date`
 echo "Start Experiment: "$start > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Dataset PATH: "$CK_EG_DATASET_PATH >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "EGSolver BIN PATH: "$SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "EGSolver BIN PATH: "$CK_EG_SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "THREADS PER BLOCK: "${CK_EG_GPU_TB} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "TIMEOUT: "${CK_EG_TIMEOUT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "Algorithm: "${CK_EG_ALG} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
