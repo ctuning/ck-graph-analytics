@@ -10,7 +10,7 @@ else
 fi
 
 
-CK_EG_ALG="--eg"
+CK_EG_ALG="--eg 4"
 #VARIABLE USED
 echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH

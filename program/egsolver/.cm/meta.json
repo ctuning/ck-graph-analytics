@@ -30,7 +30,7 @@
           "grep Solving stdout.log > test-postp.txt"
         ],
         "post_process_via_ck": "no",
-        "run_cmd_main": "$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg --gpu --timeout $<<CK_EG_TIMEOUT>>$ --noout --tb $<<CK_EG_GPU_TB>>$",
+        "run_cmd_main": "nvprof ./$<<CK_ENV_EG_BIN>>$ --input $<<CK_EG_INPUT>>$ --eg --gpu --timeout $<<CK_EG_TIMEOUT>>$ --noout --tb $<<CK_EG_GPU_TB>>$",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [
@@ -98,7 +98,7 @@
     "CK_EG_GPU_TB": 256,
     "CK_EG_INPUT": "../prova.mpg.gz",
     "CK_EG_TIMEOUT": 600,
-    "CK_EXTRA_OPT": "--noout"
+    "CK_EXTRA_OPT": "--noout --threshold 20"
   },
   "tags": [
     "graph"

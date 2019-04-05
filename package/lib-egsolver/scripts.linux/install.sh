@@ -31,29 +31,30 @@ if [ ! -d ${DEST_DIR} ] ; then
 
 cd ${INSTALL_DIR}/src/src
         # compile shullef 2
-        cp dev_EG_alg_shfl_full_2tpv.cu dev_EG_alg.cu
-        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
-        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_2tpv
+        # cp dev_EG_alg_shfl_full_2tpv.cu dev_EG_alg.cu
+        # make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        # mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_2tpv
         
         # making with shuffle 4:
-        cp dev_EG_alg_shfl_full_4tpv.cu dev_EG_alg.cu
-        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
-        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_4tpv
+        # cp dev_EG_alg_shfl_full_4tpv.cu dev_EG_alg.cu
+        # make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        # mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_4tpv
         # making with shuffle 8:
-        cp dev_EG_alg_shfl_full_8tpv.cu dev_EG_alg.cu
-        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
-        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_8tpv
+        # cp dev_EG_alg_shfl_full_8tpv.cu dev_EG_alg.cu
+        # make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        # mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_8tpv
         # making with shuffle 16:
-        cp dev_EG_alg_shfl_full_16tpv.cu dev_EG_alg.cu
-        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
-        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_16tpv
+        # cp dev_EG_alg_shfl_full_16tpv.cu dev_EG_alg.cu
+       #  make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        # mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_16tpv
         # making with shuffle 16:
-        cp dev_EG_alg_shfl_full_32tpv.cu dev_EG_alg.cu
-        make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
-        mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_32tpv
+        # cp dev_EG_alg_shfl_full_32tpv.cu dev_EG_alg.cu
+        # make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
+        # mv ${DEST_DIR}/egsolver ${DEST_DIR}/egsolver_shfl_full_32tpv
 
         # make vertex parallelism 
-        cp dev_EG_alg_shfl_none.cu dev_EG_alg.cu
+        # cp dev_EG_alg_shfl_none.cu dev_EG_alg.cu
+        # make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
         make -f Makefile.ck all DEST_DIR=${DEST_DIR} CUDA_HOME=${CUDA_HOME} CUDA_ARCH=${CUDA_ARC} SM_CODE=${CUDA_CODE} SOLVER_VERSION=${VERSION}
 
 
