@@ -1,13 +1,5 @@
 #!/bin/bash
-SOLVER=$CK_ENV_EG_BIN
 
-if [ -z "$CK_EG_SOLVER" ]
-then
-   SOLVER=$CK_ENV_EG_BIN
-   CK_EG_SOLVER="default" 
-else
-   SOLVER=${CK_ENV_EG}/bin/${CK_EG_SOLVER}
-fi
 
 
 CK_EG_ALG="--eg 4"
@@ -16,10 +8,14 @@ echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$SOLVER
-echo "THREAD BLOCK: "${CK_EG_GPU_TB}
-echo "TIMEOUT: "${CK_EG_TIMEOUT}
+echo "Version: "${CK_EG_VERSION} 
+echo "Configuration": ${CK_EG_OUTDEGREE}
 echo "Algorithm: "${CK_EG_ALG}
+
+echo "THREAD BLOCK: "${CK_EG_GPU_TB}
+echo "Threshold": "${CK_EG_THRESHOLD}
 echo "Extra Options: "${CK_EXTRA_OPT}
+echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "##########################################"
 
 
@@ -49,7 +45,7 @@ sol=`basename $tem`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
+$SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT} ${CK_EG_OUTDEGREE}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
 
 soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
 mytime=`grep "Solving time:" $soloutput | cut -d " " -f3`
