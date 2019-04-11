@@ -10,10 +10,9 @@ echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$CK_EG_SOLVER
-echo "Version: "${CK_EG_VERSION} 
+#echo "Version: "${CK_EG_VERSION} 
 echo "Configuration": ${CK_EG_OUTDEGREE}
 echo "Algorithm: "${CK_EG_ALG}
-
 echo "THREAD BLOCK: "${CK_EG_GPU_TB}
 echo "Threshold": ${CK_EG_THRESHOLD}
 echo "Extra Options: "${CK_EXTRA_OPT}
@@ -50,6 +49,9 @@ echo "$tem --> $sol.sol" ;
 $CK_EG_SOLVER  --input $istanza  ${CK_EG_ALG}  --gpu --timeout ${CK_EG_TIMEOUT} ${CK_EG_OUTDEGREE}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
 
 soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
+
+
+
 mytime=`grep "Solving time:" $soloutput | cut -d " " -f3`
 usec=`grep "Nodes per second:" $soloutput | cut -d " " -f4`
 avgdeg=`grep "Avg out-degree" $soloutput | cut -d " " -f3`
@@ -57,25 +59,12 @@ if [ -z "$mytime" ]
 then
     mytime=0
 fi
-if [ -z "$mytime" ]
+if [ -z "$usec" ]
 then
     usec=0
 fi
-if [ -z "$mytime" ]
-then
-    avgdeg=0
-fi
-echo $tem $avgdeg $mytime $usec
-if [ -z "$mytime" ]
-then
-      mytime="0.0"
-fi
-if [ -z "$usec" ]
-then
-      usec="0.0"
-fi
 
-
+echo "Printing entry in dataset results"
 echo $tem $avgdeg $mytime $usec >> $CK_EG_DATASET_PATH_OUTPUT/dataset-results.txt 2>&1
 
 echo "--------------------------";
@@ -87,13 +76,18 @@ echo "==========================";
 end=`date`
 # copy configuration of the experiment
 echo "Start Experiment: "$start > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "Dataset PATH: "$CK_EG_DATASET_PATH >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "EGSolver BIN PATH: "$CK_EG_SOLVER >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "THREADS PER BLOCK: "${CK_EG_GPU_TB} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "TIMEOUT: "${CK_EG_TIMEOUT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "Algorithm: "${CK_EG_ALG} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
-echo "Extra Options: "${CK_EXTRA_OPT} >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+echo "Dataset PATH: "$CK_EG_DATASET_PATH
+echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
+echo "EGSolver BIN PATH: "$CK_EG_SOLVER
+#echo "Version: "${CK_EG_VERSION} 
+echo "Configuration": ${CK_EG_OUTDEGREE}
+echo "Algorithm: "${CK_EG_ALG}
+echo "THREAD BLOCK: "${CK_EG_GPU_TB}
+echo "Threshold": ${CK_EG_THRESHOLD}
+echo "Extra Options: "${CK_EXTRA_OPT}
+echo "TIMEOUT: "${CK_EG_TIMEOUT}
+
+
 echo "End Experiment: "$end >> $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
 echo "##########################################"
 
