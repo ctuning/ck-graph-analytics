@@ -66,7 +66,18 @@ then
     avgdeg=0
 fi
 echo $tem $avgdeg $mytime $usec
+if [ -z "$mytime" ]
+then
+      mytime="0.0"
+fi
+if [ -z "$usec" ]
+then
+      usec="0.0"
+fi
+
+
 echo $tem $avgdeg $mytime $usec >> $CK_EG_DATASET_PATH_OUTPUT/dataset-results.txt 2>&1
+
 echo "--------------------------";
  
 echo "--------------------------";
