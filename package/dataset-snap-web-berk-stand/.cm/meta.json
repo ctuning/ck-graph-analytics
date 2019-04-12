@@ -8,7 +8,7 @@
       "TAR_SRC_NAME": "web-BerkStan.txt.gz",
       "SRC_LINK": "http://snap.stanford.edu/data/web-BerkStan.txt.gz",
       "GRAPH_NAME": "web-BerkStan", 
-      "MAX_VERTEX_ID": 685230, 
+      "MAX_VERTEX_ID": 685231, 
       "NUM_OF_VERTICES": 685230
     }, 
     "no_os_in_suggested_path": "yes", 
