@@ -14,7 +14,7 @@
       "ignore_return_code": "no",
       "run_time": {
         "post_process_via_ck": "no",
-        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_BC_BIN>>$ -f $<<CK_ENV_DATASET_SNAP_FULL_NAME>>$ -p 1x1 -n $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -N $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -H 1 -o $<<CK_ENV_DATASET_SNAP_GRAPH_NAME>>$-exact.out",
+        "run_cmd_main": "mpirun -np $<<CK_MPI_PROCESS>>$ $<<CK_ENV_BC_BIN>>$ -f $<<CK_ENV_DATASET_SNAP_FULL_NAME>>$ -p 1x1 -n $<<CK_ENV_DATASET_SNAP_MAX_VERTEX_ID>>$ -N $<<CK_ENV_DATASET_SNAP_NUM_OF_VERTICES>>$ -H 1 -o $<<CK_ENV_DATASET_SNAP_GRAPH_NAME>>$-exact.out",
         "run_cmd_out1": "stdout.log",
         "run_cmd_out2": "stderr.log",
         "run_output_files": [
