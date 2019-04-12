@@ -1,0 +1,34 @@
+{
+  "check_exit_status": "yes", 
+  "comment": "CAREFUL - requires more the 1GB of free space", 
+  "customize": {
+    "extra_dir": "", 
+    "force_ask_path": "yes", 
+    "install_env": {
+      "GRAPH_NAME": "", 
+      "MAX_VERTEX_ID": 685230, 
+      "NUM_OF_VERTICES": 685230, 
+      "SRC_LINK": "http://snap.stanford.edu/data/web-BerkStan.txt.gz", 
+      "TAR_SRC_NAME": "web-BerkStan.txt.gz"
+    }, 
+    "no_os_in_suggested_path": "yes", 
+    "no_ver_in_suggested_path": "yes", 
+    "version": "1.0"
+  }, 
+  "end_full_path": {
+    "linux": "web-BerkStan.txt"
+  }, 
+  "package_extra_name": " (SNAP Graphs)", 
+  "process_script": "install", 
+  "soft_uoa": "044f7304f07a7c34", 
+  "suggested_path": "dataset-snap-web-berk-stand", 
+  "tags": [
+    "dataset", 
+    "graph", 
+    "real-world", 
+    "snap", 
+    "gplus", 
+    "small", 
+    "social-network"
+  ]
+}
