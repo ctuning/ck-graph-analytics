@@ -80,6 +80,27 @@
           "stderr.log"
         ]
       }
+    },
+    "run-egsolver-experiment-shuffle-gpu": {
+      "ignore_return_code": "no",
+      "run_deps": {
+        "dataset-egsolver": {
+          "local": "yes",
+          "name": "EGSolver",
+          "sort": 10,
+          "tags": "dataset,egsolver,graphs"
+        }
+      },
+      "run_time": {
+        "post_process_via_ck": "no",
+        "run_cmd_main": "../runner_shuffle_gpu",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "stderr.log",
+        "run_output_files": [
+          "stdout.log",
+          "stderr.log"
+        ]
+      }
     }
   },
   "run_deps": {
@@ -91,11 +112,11 @@
     }
   },
   "run_vars": {
-    "CK_EG_ALG": "eg",
+    "CK_EG_ALG": "eg 10000",
     "CK_EG_CPU_OMP_THREADS": 4,
     "CK_EG_DATASET_PATH": "$CK_ENV_DATASET_EGSOLVER",
     "CK_EG_DATASET_PATH_OUPUT": "",
-    "CK_EG_GPU_TB": 256,
+    "CK_EG_GPU_TB": 128,
     "CK_EG_INPUT": "../prova.mpg.gz",
     "CK_EG_TIMEOUT": 600,
     "CK_EG_THRESHOLD": "--threshold 20",
