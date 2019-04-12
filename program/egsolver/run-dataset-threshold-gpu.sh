@@ -9,17 +9,35 @@ model=456081592a04c4a9
 dataset=$clique
 echo "Clique" $dataset
 ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=5
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=10
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=15
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=20
 
 dataset=$equiv
 echo "Equivalent" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=5
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=10
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=15
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=20
+
 
 
 dataset=$ladder
 echo "Ladder" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=5
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=10
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=15
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=20
+
 
 
 dataset=$model
 echo "Model" $dataset
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=5
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=10
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=15
+ck run program:egsolver  --cmd_key=run-egsolver-experiment-threshold-gpu  --deps.dataset-egsolver=$dataset --env.CK_EG_THRESHOLD=20
+
 
 
 

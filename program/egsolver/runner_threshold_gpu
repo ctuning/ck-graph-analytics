@@ -4,10 +4,6 @@ CK_EG_SOLVER=${CK_ENV_EG_BIN}
 CK_EG_SOLVER_NAME=egsolver
 
 
-    "CK_EG_ALG": "--eg",
-    "CK_EG_ITERATIONS": "10000",
-    "CK_EG_GPU_TB": 128,
-    "CK_EG_THRESHOLD": "--threshold 20",
 
 
 #VARIABLE USED
