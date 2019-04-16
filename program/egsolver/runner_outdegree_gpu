@@ -12,12 +12,13 @@ echo "##########################################"
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$CK_EG_SOLVER
-echo "Version: "${CK_EG_VERSION} 
-#echo "Configuration": ${CK_EG_OUTDEGREE}
+echo "Version: "${CK_EG_VERSION}
+echo "Small bucket: "${CK_EG_LW} 
+echo "Large bucket: "${CK_EG_UP} 
+echo "Degree bucket": ${CK_EG_OUTDEGREE}
 echo "Algorithm: "${CK_EG_ALG}
 echo "Iterations: "${CK_EG_ITERATIONS} 
 echo "THREAD BLOCK: "${CK_EG_GPU_TB}
-#echo "Threshold": ${CK_EG_THRESHOLD}
 echo "Extra Options: "${CK_EXTRA_OPT}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 echo "##########################################"
@@ -35,7 +36,7 @@ if [ -z "$CK_EG_DATASET_PATH_OUTPUT" ]
 then
       echo "WARNING!!!! CK_EG_DATASET_PATH_OUTPUT is not defined"
       echo "Creating "`pwd`"/output"
-      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output-${CK_EG_SOLVER_NAME}-shuffle-${CK_EG_VERSION}-${CK_ENV_DATASET_EGSOLVER_DATASET_NAME}
+      CK_EG_DATASET_PATH_OUTPUT=`pwd`/tmp-output-${CK_EG_SOLVER_NAME}-bucket-${CK_EG_OUTDEGREE}-${CK_EG_LW}-${CK_EG_UP}-${CK_ENV_DATASET_EGSOLVER_DATASET_NAME}
       
       mkdir -p $CK_EG_DATASET_PATH_OUTPUT
       echo $CK_EG_DATASET_PATH_OUTPUT
@@ -49,7 +50,7 @@ sol=`basename $tem`
 echo ;
 date ;
 echo "$tem --> $sol.sol" ;
-$CK_EG_SOLVER  --input $istanza  --eg ${CK_EG_ITERATIONS}  --gpu --timeout ${CK_EG_TIMEOUT} --shuffling ${CK_EG_VERSION}  --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
+$CK_EG_SOLVER  --input $istanza  --eg ${CK_EG_ITERATIONS}  --gpu --timeout ${CK_EG_TIMEOUT} --outdegree ${CK_EG_OUTDEGREE} ${CK_EG_LW} ${CK_EG_UP} --tb ${CK_EG_GPU_TB} ${CK_EXTRA_OPT} > $CK_EG_DATASET_PATH_OUTPUT/${sol}.sol  2>&1
 
 soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
 
@@ -79,15 +80,17 @@ echo "==========================";
 end=`date`
 # copy configuration of the experiment
 echo "Start Experiment: "$start > $CK_EG_DATASET_PATH_OUTPUT/experiment.txt
+
 echo "Dataset PATH: "$CK_EG_DATASET_PATH
 echo "Output PATH: "$CK_EG_DATASET_PATH_OUTPUT
 echo "EGSolver BIN PATH: "$CK_EG_SOLVER
-echo "Version: "${CK_EG_VERSION} 
-#echo "Configuration": ${CK_EG_OUTDEGREE}
+echo "Version: "${CK_EG_VERSION}
+echo "Small bucket: "${CK_EG_LW} 
+echo "Large bucket: "${CK_EG_UP} 
+echo "Degree bucket": ${CK_EG_OUTDEGREE}
 echo "Algorithm: "${CK_EG_ALG}
-echo "Iterations" ${CK_EG_ITERATIONS}
+echo "Iterations: "${CK_EG_ITERATIONS} 
 echo "THREAD BLOCK: "${CK_EG_GPU_TB}
-echo "Threshold": ${CK_EG_THRESHOLD}
 echo "Extra Options: "${CK_EXTRA_OPT}
 echo "TIMEOUT: "${CK_EG_TIMEOUT}
 

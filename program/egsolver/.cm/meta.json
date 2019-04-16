@@ -122,6 +122,27 @@
           "stderr.log"
         ]
       }
+    },
+    "run-egsolver-experiment-bucket-gpu": {
+      "ignore_return_code": "no",
+      "run_deps": {
+        "dataset-egsolver": {
+          "local": "yes",
+          "name": "EGSolver",
+          "sort": 10,
+          "tags": "dataset,egsolver,graphs"
+        }
+      },
+      "run_time": {
+        "post_process_via_ck": "no",
+        "run_cmd_main": "../runner_bucket_gpu",
+        "run_cmd_out1": "stdout.log",
+        "run_cmd_out2": "stderr.log",
+        "run_output_files": [
+          "stdout.log",
+          "stderr.log"
+        ]
+      }
     }
   },
   "run_deps": {
@@ -143,7 +164,9 @@
     "CK_EG_TIMEOUT": 600,
     "CK_EG_THRESHOLD": "20",
     "CK_EG_VERSION":"1",
-    "CK_EG_OUTDEGREE": "--outdegree 4 2 8 500000 1",
+    "CK_EG_OUTDEGREE": "4",
+    "CK_EG_LW": "2",
+    "CK_EG_UP": "8",
     "CK_EXTRA_OPT": "--noout"
   },
   "tags": [
