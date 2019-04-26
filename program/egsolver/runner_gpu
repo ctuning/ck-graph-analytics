@@ -55,16 +55,9 @@ soloutput=$CK_EG_DATASET_PATH_OUTPUT/${sol}.sol
 mytime=`grep "Solving time:" $soloutput | cut -d " " -f3`
 usec=`grep "Nodes per second:" $soloutput | cut -d " " -f4`
 avgdeg=`grep "Avg out-degree" $soloutput | cut -d " " -f3`
-if [ -z "$mytime" ]
-then
-    mytime=0
-fi
-if [ -z "$usec" ]
-then
-    usec=0
-fi
 
 echo "Printing entry in dataset results"
+echo $tem $usec
 echo $tem $avgdeg $mytime $usec >> $CK_EG_DATASET_PATH_OUTPUT/dataset-results.txt 2>&1
 
 echo "--------------------------";
