@@ -1,0 +1,35 @@
+{
+  "check_exit_status": "yes", 
+  "comment": "CAREFUL - requires more the 1GB of free space", 
+  "customize": {
+    "extra_dir": "", 
+    "force_ask_path": "yes", 
+    "install_env": {
+      "GRAPH_NAME": "p2p-Gnutella31", 
+      "MAX_VERTEX_ID": 62586, 
+      "NUM_OF_VERTICES": 62586, 
+      "SRC_LINK": "http://snap.stanford.edu/data/p2p-Gnutella31.txt.gz", 
+      "TAR_SRC_NAME": "p2p-Gnutella31.txt.gz"
+    }, 
+    "no_os_in_suggested_path": "yes", 
+    "no_ver_in_suggested_path": "yes", 
+    "version": "1.0"
+  }, 
+  "end_full_path": {
+    "linux": "p2p-Gnutella31.txt"
+  }, 
+  "package_extra_name": " (SNAP Graphs)", 
+  "process_script": "install", 
+  "soft_uoa": "044f7304f07a7c34", 
+  "suggested_path": "dataset-snap-p2p-Gnutella31", 
+  "tags": [
+    "dataset", 
+    "graph", 
+    "real-world", 
+    "snap", 
+    "gnutella31", 
+    "gnutella",
+    "large", 
+    "p2p"
+  ]
+}
