@@ -6,7 +6,7 @@
     "force_ask_path": "yes", 
     "install_env": {
       "GRAPH_NAME": "roadNet-CA", 
-      "MAX_VERTEX_ID": 1971280, 
+      "MAX_VERTEX_ID": 1971281, 
       "NUM_OF_VERTICES": 1965206, 
       "SRC_LINK": "http://snap.stanford.edu/data/roadNet-CA.txt.gz", 
       "TAR_SRC_NAME": "roadNet-CA.txt.gz"
