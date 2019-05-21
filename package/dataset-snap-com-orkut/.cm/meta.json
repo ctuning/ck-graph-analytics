@@ -6,7 +6,7 @@
     "force_ask_path": "yes",
     "install_env": {
       "GRAPH_NAME": "com-orkut",
-      "MAX_VERTEX_ID": 3072626,
+      "MAX_VERTEX_ID": 3072628,
       "NUM_OF_VERTICES": 3072628
     },
     "no_os_in_suggested_path": "yes",
