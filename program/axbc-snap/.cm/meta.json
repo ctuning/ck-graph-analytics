@@ -40,6 +40,7 @@
   },
   "run_vars": {
     "CK_GRAPH_NAME": "facebook_combined.txt",
+    "OMP_NUM_THREADS": 1,
     "CK_MPI_PROCESS": 1,
     "CK_NUM_VERTICES": 4039,
     "CK_ENV_BADER_STOP": 0,

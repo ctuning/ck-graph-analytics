@@ -60,7 +60,7 @@
   "end_full_path": {
     "linux": "install/bin/axbc2d"
   },
-  "need_cpu_info": "yes",
+  "need_cpu_info": "no",
   "only_for_host_os_tags": [
     "linux"
   ],
